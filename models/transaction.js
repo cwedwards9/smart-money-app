@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
-    let Transaction = sequelize.define("Transaction", {
+    var Transaction = sequelize.define("Transaction", {
         category: {
             type: DataTypes.STRING,
             allowNull: false
@@ -16,6 +16,8 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.DATE,
             allowNull: false
         }
+    }, {
+        freezeTableName: true
     });
 
     Transaction.associate = function(models) {

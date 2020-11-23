@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
-    let User = sequelize.define("User", {
+    var User = sequelize.define("User", {
         f_name: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -14,6 +14,8 @@ module.exports = function(sequelize, DataTypes) {
                 len: [1, 50]
             }
         }
+    },{
+        freezeTableName: true
     });
 
     User.associate = function(models) {
