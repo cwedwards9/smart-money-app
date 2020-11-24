@@ -1,0 +1,8 @@
+{{!-- 
+    -Users will "sign in", (click their name) 
+    -Then will be redirected to their transaction page 
+--}}
+
+{{#each users}}
+  <a href="/user/transactions/{{dataValues.id}}">{{dataValues.f_name}} {{dataValues.l_name}}</a>
+{{/each}}
