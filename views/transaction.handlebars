@@ -1,0 +1,9 @@
+<p>{{userTransactions.first_name}} {{userTransactions.last_name}}</p>
+
+{{#each userTransactions.transactions}}
+    <ul>
+        <li>{{category}}</li>
+        <li>{{source}}</li>
+        <li>{{amount}}</li>
+    </ul>
+{{/each}}
