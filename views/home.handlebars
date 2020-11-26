@@ -1,41 +1,439 @@
- <!-- <ul class="nav justify-content-end">
-    <li class="nav-item">
-      <a class="nav-link" href="#">New User</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Returning User</a>
-    </li>
-  </ul> -->
-  <div class="jumbotron">
-    <h1 class="display-4">Smart Money</h1>
-    <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to
-      featured content or information.</p>
-  </div>
-  <div style=padding:20px; class="container">
-    <div class="card-deck">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">About Us</h5>
-          <p class="card-text"> Bacon ipsum dolor amet pig rump tail hamburger ribeye pork chop pastrami ham hock
-            capicola flank meatball cupim drumstick. Hamburger ribeye buffalo spare ribs, leberkas porchetta bacon
-            meatloaf. Turducken flank brisket ball tip. Kevin burgdoggen doner tenderloin corned beef picanha bresaola..
-          </p>
+  <!--=======  start nav area  =======-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-lignt">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="assets/images/SmartMoneyLogoOne.png" width="250"
+                    alt="Smart Money logo with man wearing glasses">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item ">
+                        <a class="nav-link" href="#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#loans">Loans</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact Us</a>
+                    </li>
+            </div>
+            </li>
+            </ul>
+            <hr />
+            <form class="form-inline my-2 my-lg-0">
+                <a href="/login" class="btn btn-outline-success my-2 my-sm-0" type="submit">Log-In</a>
+                <a href="/register" class="btn btn-outline-success my-2 my-sm-0" type="submit">Sign Up</a>
+            </form>
         </div>
-      </div>
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">Transaction</h5>
-          <p class="card-text">Buffalo bacon porchetta pig bresaola prosciutto short loin beef ribs burgdoggen t-bone
-            turkey frankfurter landjaeger. Corned beef kielbasa hamburger pastrami. Buffalo swine tail drumstick. </p>
+    </nav>
+    <!--=======  End nav area =======-->
+
+    <!--====================  hero slider area ====================-->
+    <div class="hero-alider-area">
+        <div class="hero-slider__container-area">
+            <div class="hero-slider__container">
+
+                <div class="swiper-slide hero-slider__single-item bg-img" data-bg="assets/images/MainSliderImagev2.jpg">
+                    <div class="hero-slider__content-wrapper">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="hero-slider__content">
+                                        <h2 class="hero-slider__title">Smart Money</h2>
+                                        <p class="hero-slider__text">Want to learn more about tracking your expenses and
+                                            really see where your money is going?</p>
+                                        <a class="hero-slider__btn" href="/register">Sign Up</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">Bills </h5>
-          <p class="card-text">Sausage bresaola buffalo drumstick landjaeger bacon capicola doner boudin pastrami.
-            Corned beef capicola pig turkey, hamburger venison flank turducken t-bone chicken. Cupim turkey buffalo,
-          </p>
-        </div>
-      </div>
     </div>
-  </div>
+    <!--====================  End of hero slider area  ====================-->
+
+
+    <!--====================  Our services area  ====================-->
+    <div id="services" class="container inner">
+        <div class="row">
+            <div class="col-md-3 d-flex align-items-stretch">
+                <div class="card w-100" style="background-color: #163d65;"><a href="#transactions">
+                        <div class="service-card-icon">
+                            <img class="card-icon" data-src="assets/images/transactions-icon.png" alt width="70"
+                                src="assets/images/transactions-iconWhite.png">
+                        </div>
+                        <div class="card-body text-center">
+                            <h3 class="card-title">Transactions</h3>
+                            <p class="card-text"> Stay organized with our transaction saver.
+                            </p>
+                            <p class="card-text-link">Learn More</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-3 d-flex align-items-stretch">
+                <div class="card w-100" style="background-color: #1f6096;"><a href="#billpay">
+                        <div class="service-card-icon">
+                            <img class="card-icon" data-src="assets/images/transactions-icon.png" alt width="70"
+                                src="assets/images/bills-iconWhite.png">
+                        </div>
+                        <div class="card-body text-center">
+                            <h3 class="card-title">Bill Pay</h3>
+                            <p class="card-text">Stay on top of your bills with bill pay.
+                            </p>
+                            <p class="card-text-link">Learn More</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-3 d-flex align-items-stretch">
+                <div class="card w-100" style="background-color: #39a99f;"><a href="#budgeting">
+                        <div class="service-card-icon">
+                            <img class="card-icon" data-src="assets/images/transactions-icon.png" alt width="70"
+                                src="assets/images/budgeting-iconWhite.png">
+                        </div>
+                        <div class="card-body text-center">
+                            <h3 class="card-title">Budgeting</h3>
+                            <p class="card-text">See what you are spending money on and learn ways to save more.
+                            </p>
+                            <p class="card-text-link">Learn More</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-3 d-flex align-items-stretch">
+                <div class="card w-100" style="background-color: #e6533a;"><a href="#loans">
+                        <div class="service-card-icon">
+                            <img class="card-icon" data-src="assets/images/transactions-icon.png" alt width="70"
+                                src="assets/images/piggy-iconWhite.png">
+                        </div>
+                        <div class="card-body text-center">
+                            <h3 class="card-title">Loans</h3>
+                            <p class="card-text">Need help finding the right loans for your needs? We are here to help.
+                            </p>
+                            <p class="card-text-link">Learn More</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--====================  End of service  area  ====================-->
+
+
+    <!--====================  About area ====================-->
+    <div id="about" class="about-area section-space--inner--60" style="background-color: #eeebeb;">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="about-image">
+                        <img src="assets/images/PhoneApp2.png" class="img-fluid" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="about-content">
+                        <h2 class="about-content__title">What we're about</h2>
+                        <p class="about-content__text">We want evryone to be able to keep track of their spending. This
+                            app allows you to record your transactions into categories allowing you to see how much you
+                            spend on certain items. This allows you to bugdet better and start saving for the future.
+                        </p>
+                        <ul>
+                            <li>
+                                <h4>Groceries</h4>
+                            </li>
+                            <li>
+                                <h4>Healthcare</h4>
+                            </li>
+                            <li>
+                                <h4>Travel </h4>
+                            </li>
+                            <li>
+                                <h4>Entertainment</h4>
+                            </li>
+                            <li>
+                                <h4>Fast Food</h4>
+                            </li>
+                            <li>
+                                <h4>Household Items</h4>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--====================  End of about area  ====================-->
+
+
+
+    <!--====================  grid area  ====================-->
+    <div id="transactions" class="grid-area" style="background-color: #163d5b;">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <div class="about-image__image">
+                    <img src="assets/images/Transactions.jpg" class="img-fluid" alt="">
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="grid-text-area">
+                    <div class="text-line">
+                        <h2 class="grid_title">Keep track of your transactions </h2>
+                        <p class="grid_text">Smart Money allows you to record all transactions you make. You can place
+                            them
+                            into categories and see how much you are spending in certain categories. this allows you to
+                            make
+                            better decisions in the future. </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="billpay" class="grid-area " style="background-color: #1f6197;">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <div class="grid-text-area">
+                    <div class="text-line">
+                        <h2 class="grid_title">Bill pay made easy</h2>
+                        <p class="grid_text">Need help keeping track of when your bills are due? We now have the option
+                            to
+                            set due dates that alert you when the bill is due. </p>
+                    </div>
+                </div>
+            </div>
+            <div id="budgeting" class="col-lg-6">
+                <div class="about-image__image">
+                    <img src="assets/images/BillPay.jpg" class="img-fluid" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="loans" class="grid-area " style="background-color: #38a99e;">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <div class="about-image__image">
+                    <img src="assets/images/Budgeting.jpg" class="img-fluid" alt="">
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="grid-text-area">
+                    <div class="text-line">
+                        <h2 class="grid_title">Need help budgeting?</h2>
+                        <p class="grid_text">You will be able to categorize your expenses and see how much you are
+                            spending
+                            in certain areas. This will allow you to make better decisions in the future. </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="grid-area " style="background-color: #e65139;">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <div class="grid-text-area">
+                    <div class="text-line">
+                        <h2 class="grid_title">Savings + Loans</h2>
+                        <p class="grid_text">With all of the ways you can keep track of your oney and find ways to save,
+                            we
+                            now have partnered with some financial instituoons to provide you with the best loans
+                            possible.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="about-image__image">
+                    <img src="assets/images/Saving.jpg" class="img-fluid" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--====================  end grid area  ====================-->
+
+
+
+    <!--====================  loans area  ====================-->
+    <div id="loans" style="background-color: white;">
+        <div class="row">
+            <div class="col-md-3 loan-icons">
+                <div class="logo">
+                    <a href="https://www.chase.com/"><img src="assets/images/Chase.jpg" width="200" ></a>
+                </div>
+            </div>
+            <div class="col-md-3 loan-icons">
+                <div class="logo">
+                    <a href="https://www.pnc.com/en/personal-banking.html"><img src="assets/images/pnc.jpg" width="200"></a>
+                </div>
+            </div>
+            <div class="col-md-3 loan-icons">
+                <div class="logo">
+                    <a href="https://www.fnb-online.com/"><img src="assets/images/fnblogo.jpg" width="200";> </a>
+                </div>               
+            </div>
+            <div class="col-md-3 loan-icons">
+                <div class="logo">
+                    <a href="https://www.huntington.com/"><img src="assets/images/Huntington.jpg" width="200";></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--====================  end loans area  ====================-->
+
+
+    <!--==================== contact us area ====================-->
+    <div id="contact" class="contact-bg bg-img inner" data-bg="assets/images/ContactBGImage2.jpg">
+        <div class="container ">
+            <div class="row">
+                <div class="col">
+                    <div class="contact-banner text-center section-space--bottom--20">
+                        <h1>Contact Us</h1>
+                        <h5>Have questions? Feel free to send us a message and we will get back to you soon!</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page-wrapper">
+            <div class="contact-section">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8 col-12 text-center">
+                            <div class="contact-form align-items-center">
+                                <form id="contact-form" action="assets/php/mail.php" method="post">
+                                    <div class="row ">
+                                        <div class="col-md-6 col-12 section-space--bottom--20"><input name="con_name"
+                                                type="text" placeholder="Your Name"></div>
+                                        <div class="col-md-6 col-12 section-space--bottom--20"><input name="con_email"
+                                                type="email" placeholder="Your Email"></div>
+                                        <div class="col-12"><textarea name="con_message"
+                                                placeholder="Your Message"></textarea></div>
+                                        <div class="col-12 "><button style="border-radius: 2em;">Send Message</button>
+                                        </div>
+                                    </div>
+                                </form>
+                                <p class="form-message"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--====================  end contact area ====================-->
+
+
+
+    <!--====================  footer area ====================-->
+    <div class="footer-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="footer-content-wrapper section-space--inner--60">
+                        <div class="row">
+                            <div class="col-xl-3 col-lg-3 col-md-12">
+                                <!-- footer intro wrapper -->
+                                <div class="footer-intro-wrapper">
+                                    <div class="footer-logo">
+                                        <a href="#home">
+                                            <img src="assets/images/SmartMoneyLogoOne.png" class="img-fluid"
+                                                style="width: 200px;" alt="smart money logo">
+                                        </a>
+                                    </div>
+                                    <div class="footer-desc">
+                                        The SMART way to track, budget and save your money.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-2 offset-xl-1 col-lg-3 col-md-4">
+                                <!-- footer widget -->
+                                <div class="footer-widget">
+                                    <h5 class="footer-widget__title">Useful Links</h5>
+                                    <ul class="footer-widget__navigation">
+                                        <li><a href="#home">Home</a></li>
+                                        <li><a href="#services">Services</a></li>
+                                        <li><a href="#about">About</a></li>
+                                        <li><a href="#contact">Contact Us</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-xl-2 offset-xl-1 col-lg-3 col-md-4">
+                                <!-- footer widget -->
+                                <div class="footer-widget">
+                                    <h5 class="footer-widget__title">Banking Links</h5>
+                                    <ul class="footer-widget__navigation">
+                                        <li><a href="https://www.chase.com/">Chase</a></li>
+                                        <li><a href="https://www.huntington.com/">Huntington</a></li>
+                                        <li><a href="https://www.fnb-online.com/">First National</a></li>
+                                        <li><a href="https://www.pnc.com/en/personal-banking.html">PNC</a></li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-xl-2 offset-xl-1 col-lg-3 col-md-4">
+                                <!-- footer widget -->
+                                <div class="footer-widget mb-0">
+                                    <h5 class="footer-widget__title">Contact Us</h5>
+                                    <div class="footer-widget__content">
+                                        <p class="address">Case Western Reserve University</p>
+                                        <ul class="contact-details">
+                                            <li><span>P:</span>888.BE.SMART</li>
+                                            <li><span>F:</span>888.BE.SMART</li>
+                                            <li><span>E:</span>info@smartmoney.com</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright-wrapper">
+            <div class="footer-copyright text-center">
+                Copyright © 2019. All right reserved. Created by Nancy Lewis, Chase Edwards, Chris Morrow, Ashley
+                Anness.
+            </div>
+        </div>
+    </div>
+    <!--====================  End of footer area  ====================-->
+
+
+
+
+
+
+    <!--====================  scroll top ====================-->
+    <a href="#home" class="scroll-top" id="scroll-top">
+        <i class="fas fa-arrow-circle-up" style="color: #E65139;"></i>
+    </a>
+    <!--====================  End of scroll top  ====================-->
+
+
+
+
+
+    <!--====================  Scripts area  ====================-->
+
+    <!-- jQuery JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+
+    <!-- Swiper Slider JS -->
+    <script src="assets/js/plugins/swiper.min.js"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="assets/js/bootstrap.min.js"></script>
+
+    <!-- Main JS -->
+    <script src="assets/js/main.js"></script>
