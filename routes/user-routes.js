@@ -9,7 +9,6 @@ module.exports = function(app) {
     // Login page
     app.get("/login", (req, res) => {
         db.User.findAll({}).then(data =>{
-            console.log(data);
             res.render("login", {users: data});
           });
     });
@@ -21,8 +20,8 @@ module.exports = function(app) {
 
     // POST route for registering new user
     app.post("/register", (req, res) => {
-        db.User.create(req.body).then(() => {
-            res.redirect("/login");
+        db.User.create(req.body).then(data => {
+            res.json(data);
         });
     });
 
