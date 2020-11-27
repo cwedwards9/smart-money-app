@@ -1,11 +1,12 @@
-<p>#<span id="userid">{{userTransactions.user_id}}</span></p>
+<p>#00000<span id="userid">{{userTransactions.user_id}}</span></p>
 <p>{{userTransactions.first_name}} {{userTransactions.last_name}}</p>
 
 {{#each userTransactions.transactions}}
     <ul>
-        <li>{{category}}</li>
+        <li>{{date}}</li>
         <li>{{source}}</li>
         <li>{{amount}}</li>
+        <li>{{category}}</li>
     </ul>
 {{/each}}
 
@@ -30,27 +31,3 @@
 
     <button>Add</button>
 </form>
-
-<script>
-
-// on submit take the inputted data and send a post request to the /transaction route
-    $("#createTransaction").on("submit", e => {
-        e.preventDefault();
-
-        let newTransaction = {
-            category: $("#tCategory").val().trim(),
-            amount: $("#tAmount").val().trim(),
-            source: $("#tSource").val().trim(),
-            date: $("#tDate").val().trim(),
-            UserId: $("#userid").html()
-        };
-
-        console.log(newTransaction);
-        $.ajax("/transaction", {
-            type: "POST",
-            data: newTransaction
-        }).then(() => {
-            location.reload();
-        });
-    });
-</script>
