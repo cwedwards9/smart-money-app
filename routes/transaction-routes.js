@@ -2,7 +2,7 @@ let db = require("../models");
 
 
 module.exports = function(app){
-    // Get transactions for specific user, 
+    // Get transactions for specific user
     app.get("/user/transactions/:id", (req, res) => {
         db.User.findOne({
             where: {
@@ -11,29 +11,32 @@ module.exports = function(app){
             include: db.Transaction
         })
         .then(data => {
-            // console.log(data);
-                const obj = Object.assign({}, {
-                    first_name: data.dataValues.f_name,
-                    last_name: data.dataValues.l_name,
-                    transactions: data.dataValues.Transactions.map(t => {
-                        return Object.assign(
-                            {},
-                            {
-                                category: t.category,
-                                amount: t.amount,
-                                source: t.source
-                            }
-                        )
-                    })
+            const userTransactions = Object.assign({}, {
+                user_id: data.dataValues.id,
+                first_name: data.dataValues.f_name,
+                last_name: data.dataValues.l_name,
+                transactions: data.dataValues.Transactions.map(transaction => {
+                    return Object.assign(
+                        {},
+                        {
+                            category: transaction.category,
+                            amount: transaction.amount,
+                            source: transaction.source,
+                            date: transaction.date
+                        }
+                    )
                 })
-                console.log(obj);
-                res.render("transaction", {userTransactions: obj});
-            })
+            });
+            res.render("transaction", {userTransactions: userTransactions});
         });
+    });
 
+    
     // POST new transaction
     app.post("/transaction", (req, res) => {
-
+        db.Transaction.create(req.body).then(data => {
+            res.json(data);
+        });
     });
 
 }
