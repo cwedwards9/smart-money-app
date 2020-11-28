@@ -1,9 +1,10 @@
 let db = require("../models");
+let path = require("path");
 
 module.exports = function(app) {
     // Home page
     app.get("/", (req, res) => {
-        res.render("home");
+        res.sendFile(path.join(__dirname, "../public/home.html"));
     });
 
     // Login page
