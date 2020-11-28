@@ -1,11 +1,12 @@
 <p>#00000<span id="userid">{{userTransactions.user_id}}</span></p>
 <p>{{userTransactions.first_name}} {{userTransactions.last_name}}</p>
+<p>Total amount spent: <span id="amountSpent"></span></p>
 
 {{#each userTransactions.transactions}}
     <ul>
         <li>{{date}}</li>
         <li>{{source}}</li>
-        <li>{{amount}}</li>
+        <li class="amountDisplay">{{amount}}</li>
         <li>{{category}}</li>
     </ul>
 {{/each}}
@@ -14,10 +15,12 @@
     <label for="tCategory">Choose a category:</label>
     <select id="tCategory">
         <option value="">--Please choose an option--</option>
+        <option value="Groceries">Groceries</option>
+        <option value="Healthcare">Healthcare</option>
+        <option value="Travel">Travel</option>
         <option value="Entertainment">Entertainment</option>
         <option value="Food">Food</option>
-        <option value="Gas">Gas</option>
-        <option value="Healthcare">Healthcare</option>
+        <option value="Household Items">Household Items</option>        
     </select>
 
     <label for="tAmount">Amount</label>
