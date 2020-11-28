@@ -1,5 +1,3 @@
-// Make sure to include jQuery
-
 $("#createUser").on("submit", (e) => {
     e.preventDefault();
 
@@ -20,7 +18,8 @@ $("#createUser").on("submit", (e) => {
         type: "POST",
         data: newUser
     }).then(() => {
-        console.log("Created new user!");
+        // Once the user is registered, they will be redirected to the 'login' page
+        window.location.replace("/login");
     });
 
 });
