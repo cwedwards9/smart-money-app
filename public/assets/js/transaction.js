@@ -37,6 +37,6 @@ function calculateTotalAmount() {
         return acc + curVal;
     });
 
-    // Display the total amount spent in the element
-    $("#amountSpent").html(totalAmount);
+    // Display the total amount spent in the element (with 2 decimal places)
+    $("#amountSpent").html(totalAmount.toFixed(2));
 }
