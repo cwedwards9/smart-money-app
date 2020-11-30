@@ -3,7 +3,8 @@ $("#createUser").on("submit", (e) => {
 
     let firstName = $("#firstNameInput").val().trim();
     let lastName = $("#lastNameInput").val().trim();
-
+    let monthlyBudget = $("#monthlyBudget").val().trim();
+    
     // Validation
     if(firstName.length < 0 && lastName.length < 0) {
         alert("Please fill in a valid value for all inputs");
@@ -11,7 +12,8 @@ $("#createUser").on("submit", (e) => {
 
     let newUser = {
         f_name: firstName,
-        l_name: lastName
+        l_name: lastName,
+        budget: monthlyBudget
     }
 
     $.ajax("/register", {
@@ -29,7 +31,7 @@ $("#createUser").on("submit", (e) => {
 $("#loginBtn").on("click", () => {
     $.get("/login")
     .done(data => {
-        console.log(data);
+        $("#user-login").empty();
         for(let i = 0; i < data.length; i++){
             let id = data[i].id;
             let name = data[i].f_name + " " + data[i].l_name;
@@ -37,4 +39,4 @@ $("#loginBtn").on("click", () => {
             $("#user-login").append(user);
         }
     });
-})
+});
