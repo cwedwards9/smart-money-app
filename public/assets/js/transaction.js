@@ -10,7 +10,7 @@ $("#createTransaction").on("submit", e => {
         UserId: $("#userid").html()
     };
 
-    console.log(newTransaction);
+    // Send transaction as POST request
     $.ajax("/transaction", {
         type: "POST",
         data: newTransaction
@@ -21,11 +21,17 @@ $("#createTransaction").on("submit", e => {
 
 calculateTotalAmount();
 
+// Calculates the total amount spent from all transactions by the user
 function calculateTotalAmount() {
     // Get all elements with amountDisplay class
     let amount = $(".amountDisplay");
     // Create a new array from array like object
     let amountArr = Array.from(amount);
+
+    // If there are no transactions recorded, display $0.00 for amount spent
+    if(amountArr.length === 0){
+        $("#amountSpent").html("0.00");
+    }
 
     // Map through array and make a new array with all HTML within each element
     let newArray = amountArr.map(val => {
