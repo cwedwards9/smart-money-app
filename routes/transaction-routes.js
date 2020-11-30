@@ -11,10 +11,12 @@ module.exports = function(app){
             include: db.Transaction
         })
         .then(data => {
+            // Create a new object from the data we get from the database, user and their transactions
             const userTransactions = Object.assign({}, {
                 user_id: data.dataValues.id,
                 first_name: data.dataValues.f_name,
                 last_name: data.dataValues.l_name,
+                budget: data.dataValues.budget,
                 transactions: data.dataValues.Transactions.map(transaction => {
                     return Object.assign(
                         {},
