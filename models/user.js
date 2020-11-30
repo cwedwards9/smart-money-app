@@ -13,6 +13,14 @@ module.exports = function(sequelize, DataTypes) {
             validate: {
                 len: [1, 50]
             }
+        },
+        budget: {
+            type: DataTypes.DECIMAL(7, 2),
+            allowNull: false,
+            validate: {
+                isNumeric: true,
+                min: 1
+            }
         }
     },{
         freezeTableName: true
