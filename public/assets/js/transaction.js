@@ -19,13 +19,13 @@ $("#createTransaction").on("submit", e => {
     });
 });
 
-calculateTotalAmount();
+calculateAmountSpent();
 
 // Calculates the total amount spent from all transactions by the user
-function calculateTotalAmount() {
+function calculateAmountSpent() {
     // Get all elements with amountDisplay class
     let amount = $(".amountDisplay");
-    // Create a new array from array like object
+    // Create a copy of the array like object
     let amountArr = Array.from(amount);
 
     // If there are no transactions recorded, display $0.00 for amount spent
@@ -45,4 +45,21 @@ function calculateTotalAmount() {
 
     // Display the total amount spent in the element (with 2 decimal places)
     $("#amountSpent").html(totalAmount.toFixed(2));
+
+    calculateBalance(totalAmount);
+
+    
+}
+
+
+
+function calculateBalance(totalAmount) {
+    // Select the user's montly budget
+    let monthlyBudget = $("#monthlyBudget").html();
+
+    // Subtract the total amount spent from the monthly budget to get the balance
+    let remainingBalance = Number(monthlyBudget) - totalAmount;
+
+    // Set the calculated balance to the html element
+    $("#remainingBalance").html(remainingBalance.toFixed(2));
 }
