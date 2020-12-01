@@ -4,12 +4,13 @@
 	<!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Smart Money</title>
     
     <!-- Favicon -->
-    <link rel="icon" href="assets/images/favicon.ico">
+    <link rel="icon" href="/assets/images/favicon.ico">
 
     <!--=======  CSS  =======-->
     <!-- Bootstrap CSS -->
@@ -22,13 +23,165 @@
         integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
         crossorigin="anonymous" />
 
+    <!-- Main Style CSS -->
+    <link rel="stylesheet" href="/assets/css/pages-style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+
+    <!-- Google Chart -->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+	
 </head>
 <body>
+        <!--=======  start nav area  =======-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-lignt">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="/assets/images/SmartMoneyLogoOne.png" width="250"
+                    alt="Smart Money logo with man wearing glasses">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item ">
+                        <a class="nav-link" href="#">Transactions</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Bill Pay</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Loans</a>
+                    </li>
+            </div>
+            </li>
+            </ul>
+            <hr />
+            <div class="my-2 my-lg-0">
+                <a href="/"><button class="button header-btn" >Log Out</button></a>
+            </div>
+        </div>
+    </nav>
+    <!--=======  End nav area =======-->
 	{{{ body }}}
+
+
+<!--====================  loans area  ====================-->
+    <div id="loans" style="background-color: white;">
+        <div class="row">
+            <div class="col-md-3 loan-icons">
+                <div class="logo">
+                    <a href="https://www.chase.com/"><img src="/assets/images/Chase.jpg" width="200"></a>
+                </div>
+            </div>
+            <div class="col-md-3 loan-icons">
+                <div class="logo">
+                    <a href="https://www.pnc.com/en/personal-banking.html"><img src="/assets/images/pnc.jpg"
+                            width="200"></a>
+                </div>
+            </div>
+            <div class="col-md-3 loan-icons">
+                <div class="logo">
+                    <a href="https://www.fnb-online.com/"><img src="/assets/images/fnblogo.jpg" width="200" ;> </a>
+                </div>
+            </div>
+            <div class="col-md-3 loan-icons">
+                <div class="logo">
+                    <a href="https://www.huntington.com/"><img src="/assets/images/Huntington.jpg" width="200" ;></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--====================  end loans area  ====================-->
+
+    <!--====================  scroll top ====================-->
+    <a href="#home" class="scroll-top" id="scroll-top">
+        <i class="fas fa-arrow-circle-up" style="color: #E65139;"></i>
+    </a>
+    <!--====================  End of scroll top  ====================-->
+
+        <!--====================  footer area ====================-->
+    <div class="footer-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="footer-content-wrapper section-space--inner--60">
+                        <div class="row">
+                            <div class="col-xl-3 col-lg-3 col-md-12">
+                                <!-- footer intro wrapper -->
+                                <div class="footer-intro-wrapper">
+                                    <div class="footer-logo">
+                                        <a href="/">
+                                            <img src="/assets/images/SmartMoneyLogoOne.png" class="img-fluid"
+                                                style="width: 200px;" alt="smart money logo">
+                                        </a>
+                                    </div>
+                                    <div class="footer-desc">
+                                        The SMART way to track, budget and save your money.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-2 offset-xl-1 col-lg-3 col-md-4">
+                                <!-- footer widget -->
+                                <div class="footer-widget">
+                                    <h5 class="footer-widget__title">Useful Links</h5>
+                                    <ul class="footer-widget__navigation">
+                                        <li><a href="/">Home</a></li>
+                                        <li><a href="#">Services</a></li>
+                                        <li><a href="#">About</a></li>
+                                        <li><a href="#">Contact Us</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-xl-2 offset-xl-1 col-lg-3 col-md-4">
+                                <!-- footer widget -->
+                                <div class="footer-widget">
+                                    <h5 class="footer-widget__title">Banking Links</h5>
+                                    <ul class="footer-widget__navigation">
+                                        <li><a href="https://www.chase.com/">Chase</a></li>
+                                        <li><a href="https://www.huntington.com/">Huntington</a></li>
+                                        <li><a href="https://www.fnb-online.com/">First National</a></li>
+                                        <li><a href="https://www.pnc.com/en/personal-banking.html">PNC</a></li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-xl-2 offset-xl-1 col-lg-3 col-md-4">
+                                <!-- footer widget -->
+                                <div class="footer-widget mb-0">
+                                    <h5 class="footer-widget__title">Contact Us</h5>
+                                    <div class="footer-widget__content">
+                                        <p class="address">Case Western Reserve University</p>
+                                        <ul class="contact-details">
+                                            <li><span>P:</span>888.BE.SMART</li>
+                                            <li><span>F:</span>888.BE.SMART</li>
+                                            <li><span>E:</span>info@smartmoney.com</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright-wrapper">
+            <div class="footer-copyright text-center">
+                Copyright © 2020. All right reserved. Created by Nancy Lewis, Chase Edwards, Chris Morrow, Ashley
+                Anness.
+            </div>
+        </div>
+    </div>
+    <!--====================  End of footer area  ====================-->
+
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
 	<script type="text/javascript" src="/assets/js/user.js"></script>
     <script type="text/javascript" src="/assets/js/transaction.js"></script>
+    <script type="text/javascript" src="/assets/js/chart.js"></script>
     <script type="text/javascript" src="/assets/js/bill.js"></script>
 </body>
+
 </html>
