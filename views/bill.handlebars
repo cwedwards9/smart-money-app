@@ -1,0 +1,24 @@
+<p>#00000<span id="userid">{{userBills.user_id}}</span></p>
+<p>{{userBills.first_name}} {{userBills.last_name}}</p>
+<p>Total bills this month: <span id="billsAmount"></span></p>
+
+{{#each userBills.bills}}
+<ul>
+    <li>{{date}}</li>
+    <li>{{bName}}</li>
+    <li class="billsDisplay">{{bAmount}}</li>
+</ul>
+{{/each}}
+
+<form id="createBill">
+    <label for="bName">Bill Name</label>
+    <input id="bName" type="text">
+
+    <label for="bAmount">Amount</label>
+    <input id="bAmount" type="number" step="0.01">
+
+    <label for="bDate">Due Date for Bill</label>
+    <input id="bDate" type="date">
+
+    <button>Add</button>
+</form>
