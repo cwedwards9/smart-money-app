@@ -1,6 +1,7 @@
 <p>#00000<span id="userid">{{userTransactions.user_id}}</span></p>
 <p>{{userTransactions.first_name}} {{userTransactions.last_name}}</p>
-<p>Total amount spent: <span id="amountSpent"></span></p>
+<p>Monthly Budget: ${{userTransactions.budget}}</p>
+<p>Total amount spent: $<span id="amountSpent"></span></p>
 
 {{#each userTransactions.transactions}}
     <ul>
@@ -30,7 +31,7 @@
     <input id="tSource" type="text">
 
     <label for="tDate">Date of Transaction</label>
-    <input id="tDate" type="datetime-local">
+    <input id="tDate" type="date">
 
     <button>Add</button>
 </form>
