@@ -1,7 +1,8 @@
 <p>#00000<span id="userid">{{userTransactions.user_id}}</span></p>
 <p>{{userTransactions.first_name}} {{userTransactions.last_name}}</p>
-<p>Monthly Budget: ${{userTransactions.budget}}</p>
+<p>Monthly Budget: $<span id="monthlyBudget">{{userTransactions.budget}}</span></p>
 <p>Total amount spent: $<span id="amountSpent"></span></p>
+<p>Remaining Balance: $<span id="remainingBalance"></span></p>
 
 {{#each userTransactions.transactions}}
     <ul>
