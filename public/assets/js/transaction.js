@@ -12,8 +12,21 @@ $("#createTransaction").on("submit", e => {
 
     // Send transaction as POST request
     $.ajax("/transaction", {
-        type: "POST",
+        method: "POST",
         data: newTransaction
+    }).then(() => {
+        location.reload();
+    });
+});
+
+
+// When a user clicks the delete button, the corresponding transaction will be deleted
+$(".deleteTransaction").on("click", function() {
+    let tid = $(this).attr("tid");
+    
+    $.ajax({
+        url: `/transaction/${tid}`,
+        method: "DELETE"
     }).then(() => {
         location.reload();
     });
