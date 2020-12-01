@@ -1,39 +1,83 @@
-<p>#00000<span id="userid">{{userTransactions.user_id}}</span></p>
-<p>{{userTransactions.first_name}} {{userTransactions.last_name}}</p>
-<p>Monthly Budget: $<span id="monthlyBudget">{{userTransactions.budget}}</span></p>
-<p>Total amount spent: $<span id="amountSpent"></span></p>
-<p>Remaining Balance: $<span id="remainingBalance"></span></p>
+<div class="container">
 
-{{#each userTransactions.transactions}}
-    <ul>
-        <li>{{date}}</li>
-        <li>{{source}}</li>
-        <li class="amountDisplay">{{amount}}</li>
-        <li>{{category}}</li>
-    </ul>
-    <button class="deleteTransaction" tid="{{tid}}">Delete</button>
-{{/each}}
+    <p id="userName">Welcome {{userTransactions.first_name}} {{userTransactions.last_name}}</p>
+    <p id="userNum">#00000<span id="userid">{{userTransactions.user_id}}</span></p>
 
-<form id="createTransaction">
-    <label for="tCategory">Choose a category:</label>
-    <select id="tCategory">
-        <option value="">--Please choose an option--</option>
-        <option value="Groceries">Groceries</option>
-        <option value="Healthcare">Healthcare</option>
-        <option value="Travel">Travel</option>
-        <option value="Entertainment">Entertainment</option>
-        <option value="Food">Food</option>
-        <option value="Household Items">Household Items</option>        
-    </select>
+    <div class="monthlyTotals">
+        <div class="row">
+            <div class="col-md-4">
+                <h5>Monthly Budget
+                    <hr><span id="monthlyBudget">{{userTransactions.budget}}</span></h5>
+            </div>
+            <div class="col-md-4">
+                <h5>Amount Spent </h5>
+                <hr><span id="amountSpent"></span>
+            </div>
+            <div class="col-md-4">
+                <h5>Remaining Balance
+                    <hr><span id="remainingBalance"></span></h5>
+            </div>
+        </div>
+    </div>
 
-    <label for="tAmount">Amount</label>
-    <input id="tAmount" type="number" step="0.01">
+    <div class="container section-space-outer-20">
+        <div class="row ">
+            <div class="col-md-8">
+                <div class="col-md-12" id="transactionSection">
+                    <form id="createTransaction">
+                        <h3><i class="fas fa-plus"></i> Transactions</h3>
+                        <label for="tDate">Date of Transaction
+                            <input id="tDate" type="date" required pattern="\d{4}-\d{2}-\d{2}"><span
+                                class="validity"></span></label>
 
-    <label for="tSource">Source</label>
-    <input id="tSource" type="text">
+                        <label for="tCategory">Category</label>
+                        <select id="tCategory">
+                            <option value="">Pick a category</option>
+                            <option value="Groceries">Groceries</option>
+                            <option value="Healthcare"></i>Healthcare</option>
+                            <option value="Travel">Travel</option>
+                            <option value="Entertainment">Entertainment</option>
+                            <option value="Food">Food</option>
+                            <option value="Household Items">Household Items</option>
+                        </select>
+                        <br>
+                        <label for="tSource">Source</label>
+                        <input id="tSource" type="text" placeholder="Source">
 
-    <label for="tDate">Date of Transaction</label>
-    <input id="tDate" type="date">
+                        <label for="tAmount">Amount</label>
+                        <input id="tAmount" type="number" step="0.01" placeholder="$$$">
 
-    <button>Add</button>
-</form>
+                        <button><i class="fas fa-plus-circle text-align-center"></i> Add</button>
+                    </form>
+                    <hr>
+                    <table>
+                        <tr>
+                            <th>Date</th>
+                            <th>Category</th>
+                            <th>Source</th>
+                            <th>Amount</th>
+                            <th></th>
+                        </tr>
+                        {{#each userTransactions.transactions}}
+                        <tr>
+                            <td>{{date}}</td>
+                            <td>{{category}}</td>
+                            <td>{{source}}</td>
+                            <td class="amountDisplay">{{amount}}</td>
+                            <td> <i class="fas fa-trash-alt deleteTransaction" tid="{{tid}}"></i></td>
+                        </tr>
+                        {{/each}}
+                    </table>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="col-md-12 ml-auto transactionChart">
+                    <h3>My Transactions</h3>
+                    <div id="donutchart">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
