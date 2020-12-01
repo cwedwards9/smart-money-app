@@ -2,7 +2,7 @@ let db = require("../models");
 
 
 module.exports = function(app){
-    // Get transactions for specific user
+    // GET transactions for specific user
     app.get("/user/transactions/:id", (req, res) => {
         db.User.findOne({
             where: {
@@ -24,7 +24,8 @@ module.exports = function(app){
                             category: transaction.category,
                             amount: transaction.amount,
                             source: transaction.source,
-                            date: transaction.date
+                            date: transaction.date,
+                            tid: transaction.id
                         }
                     )
                 })
@@ -41,4 +42,14 @@ module.exports = function(app){
         });
     });
 
+    // DELETE a transaction
+    app.delete("/transaction/:id", (req, res) => {
+        db.Transaction.destroy({
+            where: {
+                id: req.params.id
+            }
+        }).then((transaction) => {
+            res.json(transaction);
+        });
+    });
 }
