@@ -27,10 +27,13 @@ module.exports = function(sequelize, DataTypes) {
     });
 
     User.associate = function(models) {
-        // Associating User with Transactions, if a user is deleted, the transactions for that user are also deleted
+        // Associating User with Transactions/Bills, if a user is deleted, the transactions/bills for that user are also deleted
         User.hasMany(models.Transaction, {
           onDelete: "cascade"
         });
+        User.hasMany(models.Bill, {
+            onDelete: "cascade"
+          });
       };
 
       return User;
