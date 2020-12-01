@@ -61,11 +61,10 @@ function calculateAmountSpent() {
 
     calculateBalance(totalAmount);
 
-    
 }
 
 
-
+// Calculate balance
 function calculateBalance(totalAmount) {
     // Select the user's montly budget
     let monthlyBudget = $("#monthlyBudget").html();
@@ -76,3 +75,24 @@ function calculateBalance(totalAmount) {
     // Set the calculated balance to the html element
     $("#remainingBalance").html(remainingBalance.toFixed(2));
 }
+
+
+// Load the chart data of transactions made by category
+google.charts.load("current", { packages: ["corechart"] });
+        google.charts.setOnLoadCallback(drawChart);
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+                ['Expenses', 'Cost/Amount'],
+                ['Groceries', 11],
+                ['Healthcare', 2],
+                ['Travel', 2],
+                ['Entertainment', 2],
+                ['Food', 4]
+            ]);
+            var options = {
+                pieHole: 0.2,
+                colors: ['#e0440e', '#e6693e', '#ec8f6e', '#f3b49f', '#f6c7b6']
+            };
+            var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+            chart.draw(data, options);
+        }
