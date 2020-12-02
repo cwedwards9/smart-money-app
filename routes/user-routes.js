@@ -22,4 +22,34 @@ module.exports = function(app) {
             res.json(data);
         });
     });
+
+
+    //  GET route for landing page
+    app.get("/user/:id", (req, res) => {
+        db.User.findOne({
+            where: {
+                id: req.params.id
+            }
+        }).then(user => {
+            res.render("landing", {user: user});
+        });
+    });
+
+
+    // GET route for loans page
+    app.get("/user/loans/:id", (req, res) => {
+        db.User.findOne({
+            where:{
+                id: req.params.id
+            }
+        }).then(user => {
+            res.render("loans", {user: user})
+        });
+    });
+
+
+    // Route Matcher
+    app.get("*", (req, res) => {
+        res.send("Sorry we could not find the page you were looking for. :(");
+    });
 }
