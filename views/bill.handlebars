@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-lignt">
         <div class="container">
-            <a class="navbar-brand" href="/user/">
+            <a class="navbar-brand" href="/user/{{userBills.user_id}}">
                 <img src="/assets/images/SmartMoneyLogoOne.png" width="250"
                     alt="Smart Money logo with man wearing glasses">
             </a>
@@ -17,11 +17,10 @@
                         <a class="nav-link" href="/user/bills/{{userBills.user_id}}">Bill Pay</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/user/loans/">Loans</a>
+                        <a class="nav-link" href="/user/loans/{{userBills.user_id}}">Loans</a>
                     </li>
+                </ul>
             </div>
-            </li>
-            </ul>
             <hr />
             <div class="my-2 my-lg-0">
                 <a href="/"><button class="button header-btn" >Log Out</button></a>
