@@ -405,7 +405,7 @@ background-color: #E65139;
   border: none;
   border-radius: 20px;
   margin-bottom: 10px;
-  transition: all ease-in 0.3s;
+  transition: all ease-in 0.2s;
 }
 
 .service-card-icon {
@@ -433,7 +433,7 @@ background-color: #E65139;
 }
 
 .card:hover {
-  transform:scale(1.1);
+  transform:scale(1.05);
 }
 @import url('https://fonts.googleapis.com/css?family=Roboto:300');
 
