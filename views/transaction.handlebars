@@ -60,7 +60,7 @@
                                 class="validity"></span></label>
 
                         <label for="tCategory">Category</label>
-                        <select id="tCategory">
+                        <select id="tCategory" required="required">
                             <option value="">Pick a category</option>
                             <option value="Groceries">Groceries</option>
                             <option value="Healthcare"></i>Healthcare</option>
@@ -71,10 +71,10 @@
                         </select>
                         <br>
                         <label for="tSource">Source</label>
-                        <input id="tSource" type="text" placeholder="Source">
+                        <input id="tSource" type="text" required="required" placeholder="Source">
 
                         <label for="tAmount">Amount</label>
-                        <input id="tAmount" type="number" step="0.01" placeholder="$$$">
+                        <input id="tAmount" type="number" step="0.01" required="required" placeholder="$$$">
 
                         <button><i class="fas fa-plus-circle text-align-center"></i> Add</button>
                     </form>
