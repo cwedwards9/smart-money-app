@@ -32,6 +32,9 @@ $(".deleteTransaction").on("click", function() {
     });
 });
 
+
+
+
 calculateAmountSpent();
 
 // Calculates the total amount spent from all transactions by the user
@@ -77,17 +80,58 @@ function calculateBalance(totalAmount) {
 }
 
 
+
+// Creates an object containing each category and the total amount spent in that category
+function getCategories() {
+    // Get all transactions using the transactionRow class
+    let transaction = $(".transactionRow");
+    // Create a copy of the array like object
+    let elementsArray = Array.from(transaction);
+
+    // Create an array of objects that contain the category with its amount spent
+    let categoryArray = elementsArray.map(element => {
+        return {category: element.childNodes[3].innerText, amount: Number(element.childNodes[7].innerText)};
+    });
+    
+    // Create an object which iterates throught the categoryArray and adds up the total amount spent by each category
+    let categoryAmountCount = categoryArray.reduce((acc, next) => {
+        if(next.category === "Groceries"){
+            acc.groceries+= next.amount;
+        } else if (next.category === "Healthcare"){
+            acc.healthcare+= next.amount;
+        } else if (next.category === "Travel"){
+            acc.travel+= next.amount;
+        } else if (next.category === "Entertainment"){
+            acc.entertainment+= next.amount;
+        } else if (next.category === "Food"){
+            acc.food+= next.amount;
+        } else if (next.category === "Household Items"){
+            acc["household items"]+= next.amount;
+        } 
+        return acc;
+    }, {groceries: 0, healthcare: 0, travel: 0, entertainment: 0, food: 0, "household items": 0});
+    console.log(categoryAmountCount);
+    return categoryAmountCount;
+}
+
+
+
+
 // Load the chart data of transactions made by category
 google.charts.load("current", { packages: ["corechart"] });
         google.charts.setOnLoadCallback(drawChart);
         function drawChart() {
+            // Call the getCategories function to get the object of categories by amount spent
+            let category = getCategories();
+
+            // Create the chart with the values from the getCategories chart
             var data = google.visualization.arrayToDataTable([
                 ['Expenses', 'Cost/Amount'],
-                ['Groceries', 11],
-                ['Healthcare', 2],
-                ['Travel', 2],
-                ['Entertainment', 2],
-                ['Food', 4]
+                ['Groceries', category.groceries],
+                ['Healthcare', category.healthcare],
+                ['Travel', category.travel],
+                ['Entertainment', category.entertainment],
+                ['Food', category.food]
             ]);
             var options = {
                 pieHole: 0.2,
