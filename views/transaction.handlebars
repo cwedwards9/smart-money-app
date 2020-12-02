@@ -88,9 +88,9 @@
                             <th></th>
                         </tr>
                         {{#each userTransactions.transactions}}
-                        <tr>
+                        <tr class="transactionRow">
                             <td>{{date}}</td>
-                            <td>{{category}}</td>
+                            <td class="tCategory">{{category}}</td>
                             <td>{{source}}</td>
                             <td class="amountDisplay">{{amount}}</td>
                             <td> <i class="fas fa-trash-alt deleteTransaction" tid="{{tid}}"></i></td>
