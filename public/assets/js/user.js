@@ -41,7 +41,7 @@ $("#loginBtn").on("click", () => {
             let name = data[i].f_name + " " + data[i].l_name;
             
             // Create a list item with the user's name and a link to their transactions page
-            let user = $("<li><a href='/user/transactions/"+ id + "'>" + name + "</a></li>");
+            let user = $("<li><a href='/user/"+ id + "'>" + name + "</a></li>");
             $("#user-login").append(user);
         }
     });
