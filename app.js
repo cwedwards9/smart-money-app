@@ -19,9 +19,9 @@ app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
 // Import Routes
-require("./routes/user-routes")(app);
 require("./routes/transaction-routes")(app);
 require("./routes/bill-routes")(app);
+require("./routes/user-routes")(app);
 
 // Synchronize the models with the database and then start the server
 db.sequelize.sync({ alter: true }).then(function() {
