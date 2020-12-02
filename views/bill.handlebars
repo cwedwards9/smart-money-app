@@ -1,3 +1,34 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-lignt">
+        <div class="container">
+            <a class="navbar-brand" href="/user/">
+                <img src="/assets/images/SmartMoneyLogoOne.png" width="250"
+                    alt="Smart Money logo with man wearing glasses">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item ">
+                        <a class="nav-link" href="/user/transactions/{{userBills.user_id}}">Transactions</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/user/bills/{{userBills.user_id}}">Bill Pay</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/user/loans/">Loans</a>
+                    </li>
+            </div>
+            </li>
+            </ul>
+            <hr />
+            <div class="my-2 my-lg-0">
+                <a href="/"><button class="button header-btn" >Log Out</button></a>
+            </div>
+        </div>
+    </nav>
+
 <p>#00000<span id="userid">{{userBills.user_id}}</span></p>
 <p>{{userBills.first_name}} {{userBills.last_name}}</p>
 <p>Total bills this month: <span id="billsAmount"></span></p>
