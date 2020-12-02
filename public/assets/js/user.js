@@ -6,11 +6,7 @@ $("#createUser").on("submit", (e) => {
     let lastName = $("#lastNameInput").val().trim();
     let monthlyBudget = $("#monthlyBudget").val().trim();
     
-    // Validation
-    if(firstName.length < 0 && lastName.length < 0) {
-        alert("Please fill in a valid value for all inputs");
-    }
-
+    // Create the new user object
     let newUser = {
         f_name: firstName,
         l_name: lastName,
