@@ -1,0 +1,95 @@
+   <nav class="navbar navbar-expand-lg navbar-light bg-lignt">
+        <div class="container">
+            <a class="navbar-brand" href="/user/">
+                <img src="/assets/images/SmartMoneyLogoOne.png" width="250"
+                    alt="Smart Money logo with man wearing glasses">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item ">
+                        <a class="nav-link" href="/user/transactions/{{userTransactions.user_id}}">Transactions</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/user/bills/{{userTransactions.user_id}}">Bill Pay</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/user/loans/">Loans</a>
+                    </li>
+            </div>
+            </li>
+            </ul>
+            <hr />
+            <div class="my-2 my-lg-0">
+                <a href="/"><button class="button header-btn" >Log Out</button></a>
+            </div>
+        </div>
+    </nav>
+   
+    <div class="container">
+
+        <p id="userName">Welcome {{userTransactions.first_name}} {{userTransactions.last_name}}</p>
+        <p id="userNum">#00000<span id="userid">{{userTransactions.user_id}}</span></p>
+
+        <div class="monthlyTotals">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>Monthly Budget
+                        <hr><span id="monthlyBudget"></span></h5>
+                </div>
+                <div class="col-md-4">
+                    <h5>Amount Spent </h5>
+                    <hr><span id="amountSpent"></span>
+                </div>
+                <div class="col-md-4">
+                    <h5>Remaining Balance
+                        <hr><span id="remainingBalance"></span></h5>
+                </div>
+            </div>
+        </div>
+
+        <div class="container section-space-outer-20">
+            <div class="row ">
+                <div class="col-md-8">
+                    <div class="col-md-12" id="transactionSection">
+
+<table>
+        <tr><th>Enter Loan Data:</th>
+          <td></td>
+          <tr><td>Amount of the loan ($):</td>
+          <td><input id="amount" onchange="calculate();"></td>
+          <tr><td>Annual interest (%):</td>
+            <td><input id="apr" onchange="calculate();"></td></tr>
+          <tr><td>Repayment period (years):</td>
+            <td><input id="years" onchange="calculate();"></td>
+          <tr><th>Approximate Payments:</th>
+            <td><button onclick="calculate();">Calculate</button></td></tr>
+          <tr><td>Monthly payment:</td>
+            <td>$<span class="output" id="payment"></span></td></tr>
+          <tr><td>Total payment:</td>
+            <td>$<span class="output" id="total"></span></td></tr>
+          <tr><td>Total interest:</td>
+            <td>$<span class="output" id="totalinterest"></span></td></tr>
+          </table>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="col-md-12 ml-auto transactionChart">
+                        <h3>Loan Options</h3>
+                        <div class="logo">
+                            <a href="https://www.chase.com/"><img src="/assets/images/Chase.jpg" width="200"></a>
+                            <a href="https://www.pnc.com/en/personal-banking.html"><img src="/assets/images/pnc.jpg"
+                                    width="200"></a>
+                            <a href="https://www.fnb-online.com/"><img src="/assets/images/fnblogo.jpg" width="200" ;>
+                            </a>
+                            <a href="https://www.huntington.com/"><img src="/assets/images/Huntington.jpg" width="200"
+                                    ;></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
