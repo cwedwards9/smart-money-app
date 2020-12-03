@@ -66,13 +66,14 @@
             </div>
         </div>
     </nav>
+
     <!--=======  End nav area =======-->
 
     <!--====================  hero slider area ====================-->
     <div class="hero-alider-area">
         <div class="hero-slider__container-area">
             <div class="hero-slider__container">
-                <div class="swiper-slide hero-slider__single-item bg-img" data-bg="assets/images/MainSliderImagev2.jpg">
+                <div class="hero-slider__single-item bg-img" data-bg="assets/images/MainSliderImagev2.jpg">
                     <div class="hero-slider__content-wrapper">
                         <div class="container">
                             <div class="row">
@@ -175,7 +176,7 @@
                 <div class="col-lg-6">
                     <div class="about-content">
                         <h2 class="about-content__title">What we're about</h2>
-                        <p class="about-content__text">We want evryone to be able to keep track of their spending. This
+                        <p class="about-content__text">We want everyone to be able to keep track of their spending. This
                             app allows you to record your transactions into categories allowing you to see how much you
                             spend on certain items. This allows you to bugdet better and start saving for the future.
                         </p>
@@ -277,10 +278,9 @@
                 <div class="grid-text-area">
                     <div class="text-line">
                         <h2 class="grid_title">Savings + Loans</h2>
-                        <p class="grid_text">With all of the ways you can keep track of your money and find ways to save,
-                            we
-                            now have partnered with some financial institutions to provide you with the best loans
-                            possible.
+                        <p class="grid_text">With all of the ways you can keep track of your money and find ways to
+                            save, we now have partnered with some financial institutions to provide you with the best
+                            loans possible.
                         </p>
                     </div>
                 </div>
@@ -421,9 +421,9 @@
                                     <div class="footer-widget__content">
                                         <p class="address">Case Western Reserve University</p>
                                         <ul class="contact-details">
-                                            <li><span>P:</span>888.BE.SMART</li>
-                                            <li><span>F:</span>888.BE.SMART</li>
-                                            <li><span>E:</span>info@smartmoney.com</li>
+                                            <li>P: 888.BE.SMART</li>
+                                            <li>F: 888.BE.SMART</li>
+                                            <li>E: <a href="mailto:info@smartmoney.com">info@smartmoney.com</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -457,13 +457,12 @@
         <div class="modal-content">
             <div class="signup-form">
                 <a class="close">&times;</a>
-                
-                <form id="createUser">
+                <form id="createUser" action="">
                     <h2>Sign Up</h2>
                     <input id="firstNameInput" type="text" required="required" placeholder="First Name">
                     <input id="lastNameInput" type="text" required="required" placeholder="Last Name">
                     <input id="monthlyBudget" type="number" required="required" placeholder="Monthly Budget">
-                    <button>Sign Up</button>
+                    <button id="submit" type="submit" value="Submit">Sign Up</button>
                 </form>
             </div>
         </div>
@@ -489,12 +488,21 @@
     <!--====================  End of login top  ====================-->
 
 
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
         integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
         crossorigin="anonymous"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+    crossorigin="anonymous"></script>
+
     <script type="text/javascript" src="assets/js/home.js"></script>
     <script type="text/javascript" src="assets/js/user.js"></script>
-    
+
+
 </body>
+
 </html>
