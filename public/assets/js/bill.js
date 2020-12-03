@@ -17,3 +17,15 @@ $("#createBill").on("submit", e => {
         location.reload();
     });
 });
+
+// When a user clicks the delete button, the corresponding bill will be deleted
+$(".deleteBill").on("click", function() {
+    let bid = $(this).attr("bid");
+    
+    $.ajax({
+        url: `/bill/${bid}`,
+        method: "DELETE"
+    }).then(() => {
+        location.reload();
+    });
+});
