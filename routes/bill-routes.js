@@ -16,13 +16,15 @@ module.exports = function(app){
                 user_id: data.dataValues.id,
                 first_name: data.dataValues.f_name,
                 last_name: data.dataValues.l_name,
+                budget: data.dataValues.budget,
                 bills: data.dataValues.Bills.map(bills => {
                     return Object.assign(
                         {},
                         {
                             bAmount: bills.amount,
                             bName: bills.name,
-                            date: bills.date
+                            date: bills.date,
+                            bid: bills.id,
                         }
                     )
                 })
@@ -36,6 +38,18 @@ module.exports = function(app){
     app.post("/bill", (req, res) => {
         db.Bill.create(req.body).then(data => {
             res.json(data);
+        });
+    });
+
+
+    // DELETE a bill
+    app.delete("/bill/:id", (req, res) => {
+        db.Bill.destroy({
+            where: {
+                id: req.params.id
+            }
+        }).then((bill) => {
+            res.json(bill);
         });
     });
 
