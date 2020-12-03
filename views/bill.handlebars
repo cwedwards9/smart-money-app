@@ -28,27 +28,132 @@
         </div>
     </nav>
 
-<p>#00000<span id="userid">{{userBills.user_id}}</span></p>
-<p>{{userBills.first_name}} {{userBills.last_name}}</p>
-<p>Total bills this month: <span id="billsAmount"></span></p>
+<div class="container">
 
-{{#each userBills.bills}}
-<ul>
-    <li>{{date}}</li>
-    <li>{{bName}}</li>
-    <li class="billsDisplay">{{bAmount}}</li>
-</ul>
-{{/each}}
+    <p id="userName">Welcome {{userBills.first_name}} {{userBills.last_name}}</p>
+    <p id="userNum">#00000<span id="userid">{{userBills.user_id}}</span></p>
 
-<form id="createBill">
-    <label for="bName">Bill Name</label>
-    <input id="bName" type="text" required="required">
+    <div class="monthlyTotals">
+        <div class="row">
+            <div class="col-md-4">
+                <h5>Monthly Budget
+                    <hr><span id="monthlyBudget">{{userBills.budget}}</span></h5>
+            </div>
+            <div class="col-md-4">
+                <h5>Bills Amount </h5>
+                <hr><span id="amountSpent"></span>
+            </div>
+            <div class="col-md-4">
+                <h5>Remaining Balance
+                    <hr><span id="remainingBalance"></span></h5>
+            </div>
+        </div>
+    </div>
 
-    <label for="bAmount">Amount</label>
-    <input id="bAmount" type="number" step="0.01" required="required">
+    <div class="container section-space-outer-20">
+        <div class="row ">
+            <div class="col-md-8">
+                <div class="col-md-12" id="billSection">
+                    <form id="createBill">
+                        <h3><i class="fas fa-plus"></i> Bills</h3>
+                        <label for="bDate">Due Date of Bill
+                            <input id="bDate" type="date" required pattern="\d{4}-\d{2}-\d{2}"><span
+                                class="validity"></span></label>
+                        <br>
+                        <label for="bName">Bill Name</label>
+                        <input id="bName" type="text" placeholder="Bill Name">
 
-    <label for="bDate">Due Date for Bill</label>
-    <input id="bDate" type="date" required="required">
+                        <label for="bAmount">Amount</label>
+                        <input id="bAmount" type="number" step="0.01" placeholder="$$$">
 
-    <button>Add</button>
-</form>
+                        <button><i class="fas fa-plus-circle text-align-center"></i> Add</button>
+                    </form>
+                   <hr>
+                    <table>
+                        <tr>
+                            <th>Date</th>
+                            <th>Bill Name</th>
+                            <th>Amount</th>
+                        </tr>
+                        {{#each userBills.bills}}
+                        <tr>
+                            <td>{{date}}</td>
+                            <td>{{bName}}</td>
+                            <td class="amountDisplay">{{bAmount}}</td>
+                            <td> <i class="fas fa-trash-alt deleteBill" bid="{{bid}}"></i></td>
+                        </tr>
+                        {{/each}}
+                    </table>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="col-md-12 ml-auto transactionChart">
+                    <h3>Calendar</h3>
+    <div class="container">
+      <div class="calendar">
+        <div class="front">
+          <div class="current-date">
+            <h1>Friday 15th</h1>
+            <h1>January 2016</h1> 
+          </div>
+
+          <div class="current-month">
+            <div class="weeks">
+              <div class="first">
+                <span class="last-month">28</span>
+                <span class="last-month">29</span>
+                <span class="last-month">30</span>
+                <span class="last-month">31</span>
+                <span>01</span>
+                <span>02</span>
+                <span>03</span>
+              </div>
+
+              <div class="second">
+                <span>04</span>
+                <span>05</span>
+                <span class="event">06</span>
+                <span>07</span>
+                <span>08</span>
+                <span>09</span>
+                <span>10</span>
+              </div>
+
+              <div class="third">
+                <span>11</span>
+                <span>12</span>
+                <span>13</span>
+                <span>14</span>
+                <span class="active">15</span>
+                <span>16</span>
+                <span>17</span>
+              </div>
+
+              <div class="fourth">
+                <span>18</span>
+                <span>19</span>
+                <span>20</span>
+                <span>21</span>
+                <span>22</span>
+                <span>23</span>
+                <span>24</span>
+              </div>
+
+              <div class="fifth">
+                <span>25</span>
+                <span>26</span>
+                <span>27</span>
+                <span>28</span>
+                <span>29</span>
+                <span>30</span>
+                <span>31</span>
+              </div>
+            </div>
+          </div>
+        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
