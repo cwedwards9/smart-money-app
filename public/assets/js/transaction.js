@@ -135,7 +135,7 @@ google.charts.load("current", { packages: ["corechart"] });
             ]);
             var options = {
                 pieHole: 0.2,
-                colors: ['#e0440e', '#e6693e', '#ec8f6e', '#f3b49f', '#f6c7b6']
+                colors: [ '#FF944D', '#E65139', '#79A6D2', '#38A99E', '#1F6197', '#003366']
             };
             var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
             chart.draw(data, options);
