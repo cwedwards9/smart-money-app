@@ -1,5 +1,4 @@
-/*=============================================
-=            TofC            =
+/*=====  TofC  ======
 
 1. Main including icons
 2. Nav
@@ -12,13 +11,9 @@
 9. Scroll button
 10. Spacing
 
-=============================================*/
+=====*/
 
-
-
-/*=============================================
-=            MAIN            =
-=============================================*/
+/*=====  Main  ======*/
 
 *, *::after, *::before {
   box-sizing: border-box;
@@ -441,23 +436,7 @@ background-color: #E65139;
 
 
 
-
-    /*=============================================
-=            about            =
-=============================================*/
-
-
-
-
-    /*=====  end about area  ======*/
-
-
-
-
-
-    /*=============================================
-=            grid            =
-=============================================*/
+/*====== grid =======*/
 
 .grid-text-area {
 padding-top: 20px;
@@ -843,43 +822,23 @@ color: rgb(112, 112, 112);
 
 
 
+/* ===== Error Page ===== */
+#errorMsgContainer {
+  width: 500px;
+  margin: 0 auto;
+}
 
+#errorMsgContainer img {
+  display: block;
+  margin: 10px auto;
+}
 
+#errorMsgContainer h1,
+#errorMsgContainer p {
+  text-align: center;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* ===== End of Error Page ===== */
 
 
 
