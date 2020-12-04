@@ -17,7 +17,7 @@
                         <a class="nav-link" href="/user/bills/{{userTransactions.user_id}}">Bill Pay</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/user/loans/{{user.dataValues.id}}">Loans</a>
+                        <a class="nav-link" href="/user/loans/{{userTransactions.user_id}}">Loans</a>
                     </li>
                 </ul>
             </div>
@@ -35,16 +35,16 @@
     <div class="monthlyTotals">
         <div class="row">
             <div class="col-md-4">
-                <h5>Monthly Budget
-                    <hr><span id="monthlyBudget">{{userTransactions.budget}}</span></h5>
+                <h5>Monthly Budget</h5>
+                    <hr><span class="dollarSign">$</span><span id="monthlyBudget">{{userTransactions.budget}}</span>
             </div>
             <div class="col-md-4">
-                <h5>Amount Spent </h5>
-                <hr><span id="amountSpent"></span>
+                <h5>Amount Spent</h5>
+                <hr><span class="dollarSign">$ </span><span id="amountSpent"></span>
             </div>
             <div class="col-md-4">
-                <h5>Remaining Balance
-                    <hr><span id="remainingBalance"></span></h5>
+                <h5>Remaining Balance</h5>
+                    <hr><span class="dollarSign">$</span><span id="remainingBalance"></span>
             </div>
         </div>
     </div>
@@ -110,3 +110,6 @@
     </div>
 </div>
 
+{{!-- Transaction.js put here in the transaction handlebars file instead of the main handlebars file to avoid any other template files from trying to access this code  --}}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/assets/js/transaction.js"></script>
