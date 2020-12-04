@@ -50,6 +50,6 @@ module.exports = function(app) {
 
     // Route Matcher
     app.get("*", (req, res) => {
-        res.send("Sorry we could not find the page you were looking for. :(");
+        res.sendFile(path.join(__dirname, "../public/error.html"));
     });
 }
