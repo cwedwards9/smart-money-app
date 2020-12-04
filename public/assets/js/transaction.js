@@ -131,7 +131,8 @@ google.charts.load("current", { packages: ["corechart"] });
                 ['Healthcare', category.healthcare],
                 ['Travel', category.travel],
                 ['Entertainment', category.entertainment],
-                ['Food', category.food]
+                ['Food', category.food],
+                ['Household Items', category["household items"]]
             ]);
             var options = {
                 pieHole: 0.2,
