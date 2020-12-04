@@ -9,7 +9,8 @@
 7. Contact
 8. Footer
 9. Scroll button
-10. Spacing
+10. Error Page
+11. Spacing
 
 =====*/
 
@@ -836,6 +837,10 @@ color: rgb(112, 112, 112);
 #errorMsgContainer h1,
 #errorMsgContainer p {
   text-align: center;
+}
+
+#errorMsgContainer p a {
+  color: #f0542d;
 }
 
 /* ===== End of Error Page ===== */
