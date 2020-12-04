@@ -33,10 +33,10 @@
 
     <div class="monthlyTotals">
         <div class="row">
-            <div class="col-md-4">
+            <div class="col-8">
                 <h5>Monthly Budget</h5>
                     <hr><span class="dollarSign">$</span><span id="monthlyBudget">{{user.dataValues.budget}}</span>
-                    <button type="button" data-toggle="modal" data-target="#editBudgetModal">Edit Budget</button>
+                    <button id="budgetModalBtn" type="button" data-toggle="modal" data-target="#editBudgetModal">Edit Budget</button>
             </div>
         </div>
     </div>
@@ -46,13 +46,14 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Edit Budget:</h5>
+                    <h5 class="modal-title">Edit Budget:</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-                    <input type="number" id="updatedBudgetInput">
+                    <label for="updatedBudgetInput">Budget</label>
+                    <input type="number" id="updatedBudgetInput" placeholder="$">
                 </div>
                 <div class="modal-footer">
                     <button id="editBudget" type="submit">Save changes</button>
