@@ -9,7 +9,7 @@ $("#createBill").on("submit", e => {
         UserId: $("#userid").html()
     };
 
-    console.log(newBill);
+    
     $.ajax("/bill", {
         type: "POST",
         data: newBill
@@ -44,22 +44,25 @@ function calculateAmountSpent() {
     // If there are no transactions recorded, display $0.00 for amount spent
     if(amountArr.length === 0){
         $("#amountSpent").html("0.00");
+
+        let monthlyBudget = $("#monthlyBudget").html();
+        $("#remainingBalance").html(monthlyBudget);
+    } 
+    else {
+        // Map through array and make a new array with all HTML within each element
+        let newArray = amountArr.map(val => {
+            return Number(val.innerText);
+        });
+
+        // Add up each value to get a total number for the total amount spent
+         let totalAmount = newArray.reduce((acc, curVal) => {
+            return acc + curVal;
+        });
+        // Display the total amount spent in the element (with 2 decimal places)
+        $("#amountSpent").html(totalAmount.toFixed(2));
+    
+        calculateBalance(totalAmount);
     }
-
-    // Map through array and make a new array with all HTML within each element
-    let newArray = amountArr.map(val => {
-        return Number(val.innerText);
-    });
-
-    // Add up each value to get a total number for the total amount spent
-    let totalAmount = newArray.reduce((acc, curVal) => {
-        return acc + curVal;
-    });
-
-    // Display the total amount spent in the element (with 2 decimal places)
-    $("#amountSpent").html(totalAmount.toFixed(2));
-
-    calculateBalance(totalAmount);
 
 }
 
@@ -75,3 +78,4 @@ function calculateBalance(totalAmount) {
     // Set the calculated balance to the html element
     $("#remainingBalance").html(remainingBalance.toFixed(2));
 }
+
