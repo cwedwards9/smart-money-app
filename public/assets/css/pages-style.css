@@ -118,6 +118,15 @@ label {
     }
   /*=====  End of navbar  ======*/
 
+
+#budgetModalBtn {
+  margin-left: 25px;
+  min-width: 125px;
+  position: absolute;
+  top: 53px;
+}
+
+
 #userName {
   font-size: 30px;
   font-weight: bold;
@@ -472,9 +481,3 @@ a.scroll-top {
   }
     
     /*=====  End of scroll top  ======*/
-
-
-
-
-    
-
