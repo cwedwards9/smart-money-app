@@ -24,6 +24,21 @@ module.exports = function(app) {
     });
 
 
+    // PUT route for updating a budget for a user
+    app.put("/budget", (req, res) => {
+        db.User.update(
+            req.body,
+            {
+                where: {
+                    id: req.body.id
+                }
+            }
+        ).then(data => {
+            res.json(data);
+        });
+    });
+
+
     //  GET route for landing page
     app.get("/user/:id", (req, res) => {
         db.User.findOne({
