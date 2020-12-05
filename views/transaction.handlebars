@@ -27,16 +27,15 @@
             </div>
         </div>
     </nav>
-<div class="container">
-
+<main class="container">
     <p id="userName">Welcome {{userTransactions.first_name}} {{userTransactions.last_name}}</p>
     <p id="userNum">#00000<span id="userid">{{userTransactions.user_id}}</span></p>
 
-    <div class="monthlyTotals">
+    <section class="monthlyTotals">
         <div class="row">
             <div class="col-md-4">
                 <h5>Monthly Budget</h5>
-                    <hr><span class="dollarSign">$</span><span id="monthlyBudget">{{userTransactions.budget}}</span>
+                    <hr><span class="dollarSign">$ </span><span id="monthlyBudget">{{userTransactions.budget}}</span>
             </div>
             <div class="col-md-4">
                 <h5>Amount Spent</h5>
@@ -44,14 +43,14 @@
             </div>
             <div class="col-md-4">
                 <h5>Remaining Balance</h5>
-                    <hr><span class="dollarSign">$</span><span id="remainingBalance"></span>
+                    <hr><span class="dollarSignBalance">$ </span><span id="remainingBalance"></span>
             </div>
         </div>
-    </div>
+    </section>
 
-    <div class="container section-space-outer-20">
+    <section class="container section-space-outer-20">
         <div class="row ">
-            <div class="col-md-8">
+            <div class="col-lg-8">
                 <div class="col-md-12" id="transactionSection">
                     <form id="createTransaction">
                         <h3><i class="fas fa-plus"></i> Transactions</h3>
@@ -99,16 +98,16 @@
                     </table>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-lg-4">
                 <div class="col-md-12 ml-auto transactionChart">
-                    <h3>My Transactions</h3>
+                    <h4>My Transactions</h4>
                     <div id="donutchart">
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
+    </section>
+</main>
 
 {{!-- Transaction.js put here in the transaction handlebars file instead of the main handlebars file to avoid any other template files from trying to access this code  --}}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>

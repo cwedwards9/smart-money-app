@@ -27,21 +27,21 @@
     </div>
 </nav>
 
-<div class="container">
+<main class="container">
 
     <p id="userName">Welcome {{user.dataValues.f_name}} {{user.dataValues.l_name}}</p>
     <p id="userNum">#00000<span id="userid">{{user.dataValues.id}}</span></p>
 
-    <div class="monthlyTotals">
+    <section class="monthlyTotals">
         <div class="row">
             <div class="col-md-4">
-                <h5>Monthly Budget 
-                    <hr><span id="monthlyBudget">{{user.dataValues.budget}}</span></h5>
+                <h5>Monthly Budget</h5>
+                    <hr><span class="dollarSign">$ </span><span id="monthlyBudget">{{user.dataValues.budget}}</span>
             </div>
         </div>
-    </div>
+    </section>
 
-    <div class="container section-space-outer-20">
+    <section class="container section-space-outer-20">
         <div class="row ">
             <div class="col-md-8 d-flex">
                 <div class="col-md-12" id="loansSection">
@@ -51,34 +51,27 @@
                         <hr>
                         <div class="col-md-6" id="enterDataLoan">
                             <p style="margin-bottom: 0px;">Amount ($)</p>
-                            <input id="amount" onchange="calculate();">
-
+                            <input id="amount">
                             <p style="margin-bottom: 0px;">Interest (%)</p>
-                            <input id="apr" onchange="calculate();">
-
+                            <input id="apr">
                             <p style="margin-bottom: 0px;">Length (years)</p>
-                            <input id="years" onchange="calculate();">
+                            <input id="years">
                             <br>
                             <br>
-                            <button onclick="calculate();">Calculate</button>
-                            
+                            <button onclick="calculate();">Calculate</button>  
                         </div>
 
                         <div class="col-md-6" id="enterDataLoan">
-
-                                    <h3>Approximate Payments</h3>
-
-                                    <p style="margin-bottom: 0px;">Monthly payment</p>
-                                    <h3 style="color: #38A99E;">$<span class="output" id="payment"></span></h3>
-
-                                    <p style="margin-bottom: 0px;">Total payment</p>
-                                    <h3 style="color: #38A99E;">$<span class="output" id="total"></span></h3>
+                            <h3>Approximate Payments</h3>
+                            <p style="margin-bottom: 0px;">Monthly payment</p>
+                            <h3 style="color: #38A99E;">$<span class="output" id="payment"></span></h3>
+                            <p style="margin-bottom: 0px;">Total payment</p>
+                            <h3 style="color: #38A99E;">$<span class="output" id="total"></span></h3>
                         </div>
                     </div>
-
                 </div>
             </div>
-            <div class="col-md-4 d-flex">
+            <aside class="col-md-4 d-flex">
                 <div class="col-md-12 ml-auto loanList ">
                     <h3>Bad credit?</h3>
                     <p>Below are some helpful credit monitoring sites for you to use to make sure you get approved when you're ready to make a new purchase.</p>
@@ -97,8 +90,7 @@
                                 ;></a>
                     </div>
                 </div>
-            </div>
+            </aside>
         </div>
-    </div>
-</div>
-</div>
+    </section>
+</main>

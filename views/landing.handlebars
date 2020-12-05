@@ -26,23 +26,23 @@
         </div>
     </div>
 </nav>
-<div class="container">
 
+<main class="container">
     <p id="userName">Welcome {{user.dataValues.f_name}} {{user.dataValues.l_name}}</p>
     <p id="userNum">#00000<span id="userid">{{user.dataValues.id}}</span></p>
 
-    <div class="monthlyTotals">
+    <section class="monthlyTotals">
         <div class="row">
             <div class="col-8">
                 <h5>Monthly Budget</h5>
                     <hr><span class="dollarSign">$ </span><span id="monthlyBudget">{{user.dataValues.budget}}</span>
-                    <button id="budgetModalBtn" type="button" data-toggle="modal" data-target="#editBudgetModal">Edit Budget</button>
+                    <button id="budgetModalBtn" type="button" data-toggle="modal" data-target="#editBudgetModal"><i class="fas fa-pencil-alt"></i></button>
             </div>
         </div>
-    </div>
+    </section>
 
     {{!-- Edit Budget Modal --}}
-    <div class="modal fade" id="editBudgetModal" tabindex="-1" role="dialog" aria-labelledby="editBudget" aria-hidden="true">
+    <section class="modal fade" id="editBudgetModal" tabindex="-1" role="dialog" aria-labelledby="editBudget" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -62,11 +62,11 @@
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
 
 
-    <div class="container section-space-outer-20">
+    <section class="container section-space-outer-20">
         <div class="row ">
             <div id="services" class="container inner">
                 <div class="row">
@@ -106,6 +106,5 @@
                 </div>
             </div>
         </div>
-    </div>
-</div>
-</div>
+    </section>
+</main>
