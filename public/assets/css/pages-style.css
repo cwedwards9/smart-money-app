@@ -1,3 +1,17 @@
+/*=====  TofC  ======/
+1. Main 
+2. Nav
+3. Money Section Top Bar
+4. Landing Page
+5. Budget and Transaction Pages
+6. Loans Page
+7. Loans Logos - Bottom
+8. Footer
+9. Scroll button
+
+
+/*=====  Main  ======*/
+
 body {
   background-color: #f7f7f7;
 }
@@ -28,7 +42,6 @@ hr {
   margin-bottom: 0px;
 }
 
-
 .section-space--inner--60 {
   padding-top: 60px;
   padding-bottom: 60px;
@@ -46,6 +59,11 @@ hr {
   }
   }
 
+  .section-space-outer-20 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
 ul {
   list-style: outside none none;
   margin: 0;
@@ -56,15 +74,15 @@ ul {
   padding:0px;        
 }
 
-
-
 label {
   font-family: "Roboto", sans-serif;
   color: #4e4e4e;
 }
-/*=============================================
-=             navbar            =
-=============================================*/
+
+/*=====  Main  ======*/
+
+
+/*=====  Navbar  ======*/
 
 .nav-link:hover {
   text-decoration: none;
@@ -119,62 +137,99 @@ label {
   /*=====  End of navbar  ======*/
 
 
-#budgetModalBtn {
-  margin-left: 25px;
-  min-width: 100px;
-  position: absolute;
-  top: 53px;
-}
+
+  /*=====  Money section - Top  ======*/
+  #budgetModalBtn {
+    margin-left: 25px;
+    min-width: 100px;
+    position: absolute;
+    top: 53px;
+  }
+  
+  
+  #userName {
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 35px;
+    margin-bottom: 5px;
+    color: #4e4e4e;
+  }
+  #userNum {
+    font-size: 16px;
+    color: #4e4e4e;
+  }
+  
+  .monthlyTotals {
+    background-color: white;
+    border: none;
+    border-radius: 1em;
+    padding: 20px; 
+    box-shadow: 0px 0px 6px #dddddd;
+  }
+  
+  #amountSpent, #monthlyBudget {
+    color: #4e4e4e;
+    font-size: 45px;
+    font-weight: 100;
+    font-family: "Roboto", sans-serif;
+  }
+  
+  #remainingBalance {
+    color: #38A99E;
+    font-size: 45px;
+    font-weight: 100;
+    font-family: "Roboto", sans-serif;
+  }
+    /*=====  End  Money section - Top  ======*/
 
 
-#userName {
-  font-size: 30px;
-  font-weight: bold;
-  margin-top: 35px;
-  margin-bottom: 5px;
-  color: #4e4e4e;
-}
-#userNum {
-  font-size: 16px;
-  color: #4e4e4e;
-}
 
-.monthlyTotals {
-  background-color: white;
-  border: none;
-  border-radius: 1em;
-  padding: 20px; 
-  box-shadow: 0px 0px 6px #dddddd;
-}
 
-#amountSpent, #monthlyBudget {
-  color: #4e4e4e;
-  font-size: 45px;
-  font-weight: 100;
-  font-family: "Roboto", sans-serif;
-}
+  /*=====  Landing Page  ======*/
+  .card {
+    background-color: white;
+    border-radius: 1em;
+    padding: 20px; 
+    box-shadow: 0px 0px 6px #dddddd;
+    margin-bottom: 50px;
+  }
+  
+  .transaction-card {
+  border-bottom: 15px solid #163D5B;
+  }
+  
+  .bill-pay-card {
+  border-bottom: 15px solid #38A99E;
+  }
+  
+  .loan-card {
+  border-bottom: 15px solid #E65139;
+  }
+  
+  .service-card-icon {
+  text-align: center;
+  }
+  
+  .fa-calculator, .fa-money-bill-alt, .fa-piggy-bank {
+  font-size: 40px;
+  }
+  
+  .card:hover {
+  transform:scale(1.04);
+  text-decoration: none;
+  }
+  @import url('https://fonts.googleapis.com/css?family=Roboto:300');
 
-#remainingBalance {
-  color: #38A99E;
-  font-size: 45px;
-  font-weight: 100;
-  font-family: "Roboto", sans-serif;
-}
+    /*=====  End Landing Page  ======*/
 
+
+ /*=====  Budget and Transaction Pages  ======*/
 #transactionSection {
   background-color: white;
   border-left: 15px solid #163D5B;
   border-radius: 1em;
   padding: 20px; 
   box-shadow: 0px 0px 6px #dddddd;
-}
-
-#loansSection {
-background-color: white;
-border-left: 15px solid #E65139;
-border-radius: 1em;
-padding: 35px; 
-box-shadow: 0px 0px 6px #dddddd;
 }
 
 #billSection {
@@ -185,11 +240,6 @@ padding: 20px;
 box-shadow: 0px 0px 6px #dddddd;
 }
 
-.section-space-outer-20 {
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-
 .transactionChart {
   background-color: white;
   border: none;
@@ -198,17 +248,6 @@ box-shadow: 0px 0px 6px #dddddd;
   box-shadow: 0px 0px 6px #dddddd;
   margin: 0px;
   border-left: 15px solid #E65139;
-}
-
-.loanList {
-background-color: white;
-border: none;
-border-radius: 1em;
-padding: 20px; 
-padding-bottom: 50px;
-box-shadow: 0px 0px 6px #dddddd;
-margin: 0px;
-border-left: 15px solid #E65139;
 }
 
 input {
@@ -258,45 +297,9 @@ tr:nth-child(even) {
   background-color: #dddddd;
 }
 
-
 #donutchart {
   padding: 0px;
-
 }
-
-.card {
-  background-color: white;
-  border-radius: 1em;
-  padding: 20px; 
-  box-shadow: 0px 0px 6px #dddddd;
-  margin-bottom: 50px;
-}
-
-.transaction-card {
-border-bottom: 15px solid #163D5B;
-}
-
-.bill-pay-card {
-border-bottom: 15px solid #38A99E;
-}
-
-.loan-card {
-border-bottom: 15px solid #E65139;
-}
-
-.service-card-icon {
-text-align: center;
-}
-
-.fa-calculator, .fa-money-bill-alt, .fa-piggy-bank {
-font-size: 40px;
-}
-
-.card:hover {
-transform:scale(1.04);
-text-decoration: none;
-}
-@import url('https://fonts.googleapis.com/css?family=Roboto:300');
 
 a:hover {
 text-decoration: none;
@@ -306,34 +309,52 @@ text-decoration: none;
 color: #E65139;
 cursor: pointer;
 }
+/*=====  End Budget and Transaction Pages  ======*/
 
 
-  /*=============================================
-=            loans            =
-=============================================*/
+ /*=====  Loans Page  ======*/
+ .loanList {
+  background-color: white;
+  border: none;
+  border-radius: 1em;
+  padding: 20px; 
+  padding-bottom: 50px;
+  box-shadow: 0px 0px 6px #dddddd;
+  margin: 0px;
+  border-left: 15px solid #E65139;
+  }
+
+  #loansSection {
+    background-color: white;
+    border-left: 15px solid #E65139;
+    border-radius: 1em;
+    padding: 35px; 
+    box-shadow: 0px 0px 6px #dddddd;
+    }
+
+ /*=====  End Loans Page  ======*/
+
+
+
+/*=====  Loans Logos  ======*/
 .loan-icons {
   color: white;
   font-size: 60px;
   padding: 1em;
   text-align: center;
 }
-
 .btn-primary {
   border: 0px;
   background-color: transparent;
   width: 125px;
 }
-
 .logo {
   opacity: 0.3;
 }
-
 .logo:hover {
   opacity: 1.0;
 }
-
-
-/*=====  end loans area  ======*/
+/*=====  end loans logo area  ======*/
 
 
   /*=============================================
