@@ -8,6 +8,7 @@
 7. Loans Logos - Bottom
 8. Footer
 9. Scroll button
+10. Error page
 
 
 /*=====  Main  ======*/
@@ -79,6 +80,10 @@ label {
   color: #4e4e4e;
 }
 
+select {
+  outline: none;
+}
+
 /*=====  Main  ======*/
 
 
@@ -129,10 +134,12 @@ label {
   padding-left: 20px;
   padding-top: 6px;
   padding-bottom: 6px;
+  outline: none;
   }
   
   .header-btn:hover {
   background-color: #E65139;
+  outline: none;
     }
   /*=====  End of navbar  ======*/
 
@@ -140,13 +147,20 @@ label {
 
   /*=====  Money section - Top  ======*/
   #budgetModalBtn {
-    margin-left: 25px;
-    position: absolute;
+    margin-left: 5px;
     background-color: transparent;
-    color: #222;
+    color: #163D5B;
     top: 53px;
+    justify-content: flex-end;
+    border: none;
+    outline: none;
   }
   
+  #budgetModalBtn:hover {
+    color: #E65139;
+    border: none;
+    outline: none;
+  }
   
   #userName {
     font-size: 30px;
@@ -180,10 +194,6 @@ label {
     font-size: 45px;
     font-weight: 100;
     font-family: "Roboto", sans-serif;
-  }
-
-  .dollarSignBalance {
-    color: #38A99E;
   }
     /*=====  End  Money section - Top  ======*/
 
@@ -261,6 +271,7 @@ border: none;
 border-radius: 2em;
 padding: 6px;
 margin: 5px;
+outline: none;
 }
 
 button{
@@ -352,6 +363,7 @@ cursor: pointer;
   border: 0px;
   background-color: transparent;
   width: 125px;
+  outline: none;
 }
 .logo {
   opacity: 0.3;
@@ -506,4 +518,4 @@ a.scroll-top {
   bottom: 60px;
   }
     
-    /*=====  End of scroll top  ======*/
+/*=====  End of scroll top  ======*/

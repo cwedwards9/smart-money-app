@@ -92,10 +92,12 @@ a, button {
   line-height: inherit;
   text-decoration: none;
   cursor: pointer;
+  outline: none;
 }
 
 a, button, img, input, span {
   transition: all 0.1s ease 0s;
+  outline: none;
 }
 
 *:focus {
@@ -114,6 +116,7 @@ a:hover {
 
 button, input[type=submit] {
   cursor: pointer;
+  outline: none;
 }
 
 ul {
@@ -150,6 +153,11 @@ padding: 10px;
 color: #1f6096;
 float: left;
 }
+select {
+  outline: none;
+
+}
+
 
 
 /*=============================================
@@ -226,6 +234,7 @@ color: #1f6197;
 }
 .button.navbar-toggler {
 color: #163D5B;
+outline: none;
 }
 
 .navbar-toggler-icon {
@@ -234,6 +243,7 @@ color: #163D5B;
  
 .button.navbar-toggler-icon {
    color: #163D5B;
+   outline: none;
    }
 
 .header-btn {
@@ -267,20 +277,25 @@ background-color: #E65139;
 }
 .hero-slider__container-area .ht-swiper-button-prev {
   left: 100px;
+  outline: none;
 }
 @media only screen and (min-width: 1200px) and (max-width: 1499px) {
   .hero-slider__container-area .ht-swiper-button-prev {
     left: 20px;
+    outline: none;
   }
 }
 .hero-slider__container-area .ht-swiper-button-next {
   right: 100px;
+  outline: none;
 }
 @media only screen and (min-width: 1200px) and (max-width: 1499px) {
   .hero-slider__container-area .ht-swiper-button-next {
     right: 20px;
+    outline: none;
   }
 }
+
 .hero-slider__single-item {
   background-size: cover;
   background-repeat: no-repeat;
@@ -312,6 +327,7 @@ background-color: #E65139;
 .hero-slider__content  {
   animation: transitionIn 0.75s;
 }
+
 @keyframes transitionIn {
   from {
     opacity: 0;
@@ -325,8 +341,9 @@ background-color: #E65139;
 .hero-slider__title {
   font-size: 70px;
   line-height: 1.2;
-  color: #FFFFFF;
+  color: #ffffff;
   margin-bottom: 20px;
+  
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .hero-slider__title {
@@ -347,8 +364,10 @@ background-color: #E65139;
 .hero-slider__text {
   font-size: 20px;
   line-height: 1.4;
-  color: #FFFFFF;
+  color: #ffffff;
   margin-bottom: 20px;
+
+
 }
 @media only screen and (max-width: 575px) {
   .hero-slider__text {
@@ -360,24 +379,26 @@ background-color: #E65139;
   line-height: 1;
   padding: 20px 60px;
   color:white;
-  background-color: #E65139;
+  background-color: #e65139;
   align-self: flex-start;
   border-radius: 50px;
   border: none;
   transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
+
 .open-button {
+  outline: none;
   opacity: 0.8;
   position: fixed;
   bottom: 23px;
   right: 28px;
   width: 280px;
 }
+
 .hero-slider__btn:hover, .hero-slider__btn:focus, .hero-slider__btn:active {
   color: white;
   background-color: #1F6197;
 }
-
 
 /*=====  End of hero slider  ======*/
 
@@ -544,6 +565,7 @@ animation-fill-mode: both;
   text-transform: uppercase;
   font-weight: 700;
   margin-top: 15px;
+  outline: none;
 }
 .contact-form input[type=submit]:hover, .contact-form button:hover, .contact-form .submit:hover {
   background-color: #1d1d25;
@@ -761,6 +783,7 @@ background: #E65139;
 font-size: 16px;
 font-weight: 400;
 color: #fff;
+outline: none;
 }
 
 #signup {
@@ -768,6 +791,7 @@ color: #fff;
 }
 button:hover {
 background: #163D5B;
+outline: none;
 }
 .close {
 color: #aaa;
