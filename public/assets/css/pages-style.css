@@ -141,8 +141,9 @@ label {
   /*=====  Money section - Top  ======*/
   #budgetModalBtn {
     margin-left: 25px;
-    min-width: 100px;
     position: absolute;
+    background-color: transparent;
+    color: #222;
     top: 53px;
   }
   
