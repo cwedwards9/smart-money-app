@@ -139,6 +139,10 @@ google.charts.load("current", { packages: ["corechart"] });
             ]);
             var options = {
                 pieHole: 0.2,
+                chartArea: {'width': '100%', 'height': '80%'},
+                legend: {'position': 'bottom'},
+                width: 245,
+                height: 280,
                 colors: [ '#FF944D', '#E65139', '#79A6D2', '#38A99E', '#1F6197', '#003366']
             };
             var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
