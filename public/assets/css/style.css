@@ -281,21 +281,6 @@ background-color: #E65139;
     right: 20px;
   }
 }
-.hero-slider__wrapper .swiper-slide-active .hero-slider__content > *:nth-child(1) {
-  animation-name: fadeInDown;
-  animation-duration: 1.5s;
-  animation-delay: 0.5s;
-}
-.hero-slider__wrapper .swiper-slide-active .hero-slider__content > *:nth-child(2) {
-  animation-name: fadeInLeft;
-  animation-duration: 1.5s;
-  animation-delay: 1s;
-}
-.hero-slider__wrapper .swiper-slide-active .hero-slider__content > *:nth-child(3) {
-  animation-name: fadeInDown;
-  animation-duration: 1.5s;
-  animation-delay: 2.5s;
-}
 .hero-slider__single-item {
   background-size: cover;
   background-repeat: no-repeat;
@@ -324,17 +309,24 @@ background-color: #E65139;
     height: 450px;
   }
 }
-.hero-slider__content > * {
-  animation-name: fadeInUp;
-  animation-duration: 1s;
-  animation-fill-mode: both;
+.hero-slider__content  {
+  animation: transitionIn 0.75s;
+}
+@keyframes transitionIn {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 .hero-slider__title {
   font-size: 70px;
   line-height: 1.2;
-  color: #ffffff;
+  color: #FFFFFF;
   margin-bottom: 20px;
-  
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .hero-slider__title {
@@ -355,10 +347,8 @@ background-color: #E65139;
 .hero-slider__text {
   font-size: 20px;
   line-height: 1.4;
-  color: #ffffff;
+  color: #FFFFFF;
   margin-bottom: 20px;
-
-
 }
 @media only screen and (max-width: 575px) {
   .hero-slider__text {
@@ -370,26 +360,24 @@ background-color: #E65139;
   line-height: 1;
   padding: 20px 60px;
   color:white;
-  background-color: #e65139;
+  background-color: #E65139;
   align-self: flex-start;
   border-radius: 50px;
   border: none;
   transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
-
 .open-button {
-
   opacity: 0.8;
   position: fixed;
   bottom: 23px;
   right: 28px;
   width: 280px;
 }
-
 .hero-slider__btn:hover, .hero-slider__btn:focus, .hero-slider__btn:active {
   color: white;
   background-color: #1F6197;
 }
+
 
 /*=====  End of hero slider  ======*/
 
