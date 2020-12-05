@@ -121,7 +121,7 @@ label {
 
 #budgetModalBtn {
   margin-left: 25px;
-  min-width: 125px;
+  min-width: 100px;
   position: absolute;
   top: 53px;
 }
