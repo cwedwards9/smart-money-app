@@ -24,7 +24,7 @@ require("./routes/bill-routes")(app);
 require("./routes/user-routes")(app);
 
 // Synchronize the models with the database and then start the server
-db.sequelize.sync({ alter: true }).then(function() {
+db.sequelize.sync().then(function() {
     app.listen(PORT, () => {
       console.log(`App is listening on PORT: ${PORT}` );
     });
