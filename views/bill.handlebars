@@ -1,38 +1,41 @@
+<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+
+
+{{!-- Nav Bar --}}
 <nav class="navbar navbar-expand-lg navbar-light bg-lignt">
-        <div class="container">
-            <a class="navbar-brand" href="/user/{{userBills.user_id}}">
-                <img src="/assets/images/SmartMoneyLogoOne.png" width="250"
-                    alt="Smart Money logo with man wearing glasses">
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
-                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item ">
-                        <a class="nav-link" href="/user/transactions/{{userBills.user_id}}">Transactions</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/user/bills/{{userBills.user_id}}">Bill Pay</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/user/loans/{{userBills.user_id}}">Loans</a>
-                    </li>
-                </ul>
-            </div>
-            <hr />
-            <div class="my-2 my-lg-0">
-                <a href="/"><button class="button header-btn">Log Out</button></a>
-            </div>
+    <div class="container">
+        <a class="navbar-brand" href="/user/{{userBills.user_id}}">
+            <img src="/assets/images/SmartMoneyLogoOne.png" width="250" alt="Smart Money logo with man wearing glasses">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item ">
+                    <a class="nav-link" href="/user/transactions/{{userBills.user_id}}">Transactions</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/user/bills/{{userBills.user_id}}">Bill Pay</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/user/loans/{{userBills.user_id}}">Loans</a>
+                </li>
+            </ul>
         </div>
-    </nav>
-
+        <hr />
+        <div class="my-2 my-lg-0">
+            <a href="/"><button class="button header-btn">Log Out</button></a>
+        </div>
+    </div>
+</nav>
+{{!-- Main  --}}
 <main class="container">
-
+    {{!-- Welcome --}}
     <p id="userName">Welcome {{userBills.first_name}} {{userBills.last_name}}</p>
     <p id="userNum">#00000<span id="userid">{{userBills.user_id}}</span></p>
-
+    {{!-- Money Totals --}}
     <section class="monthlyTotals">
         <div class="row">
             <div class="col-md-4">
@@ -40,19 +43,19 @@
                     <hr><span class="dollarSign">$ </span><span id="monthlyBudget">{{userBills.budget}}</span>
             </div>
             <div class="col-md-4">
-                <h5>Bills Amount</h5>
+                <h5>Bills Amount </h5>
                 <hr><span class="dollarSign">$ </span><span id="amountSpent"></span>
             </div>
             <div class="col-md-4">
-                <h5>Remaining Balance (After Bills)</h5>
-                    <hr><span class="dollarSignBalance">$ </span><span id="remainingBalance"></span>
+                <h5>Remaining Balance</h5>
+                    <hr><span class="dollarSign" style="color: #38A99E;">$ </span><span id="remainingBalance"></span>
             </div>
         </div>
     </section>
-
-    <section class="container section-space-outer-20">
+    <div class="container section-space-outer-20">
         <div class="row ">
-            <div class="col-md-8">
+            {{!-- Main Bils Section --}}
+            <section class="col-xl-8">
                 <div class="col-md-12" id="billSection">
                     <form id="createBill">
                         <h3><i class="fas fa-plus"></i> Bills</h3>
@@ -62,13 +65,11 @@
                         <br>
                         <label for="bName">Bill Name</label>
                         <input id="bName" type="text" placeholder="Bill Name">
-
                         <label for="bAmount">Amount</label>
                         <input id="bAmount" type="number" step="0.01" placeholder="$$$">
-
                         <button><i class="fas fa-plus-circle text-align-center"></i> Add</button>
                     </form>
-                   <hr>
+                    <hr>
                     <table>
                         <tr>
                             <th>Date</th>
@@ -85,76 +86,15 @@
                         {{/each}}
                     </table>
                 </div>
-            </div>
-            <div class="col-md-4">
+            </section>
+            {{!-- Calendar --}}
+            <section class="col-xl-4">
                 <div class="col-md-12 ml-auto transactionChart">
-                    <h3>Calendar</h3>
                     <div class="container">
-                    <div class="calendar">
-                        <div class="front">
-                        <div class="current-date">
-                            <h1>Friday 15th</h1>
-                            <h1>January 2016</h1> 
-                        </div>
-
-                        <div class="current-month">
-                            <div class="weeks">
-                                <div class="first">
-                                    <span class="last-month">28</span>
-                                    <span class="last-month">29</span>
-                                    <span class="last-month">30</span>
-                                    <span class="last-month">31</span>
-                                    <span>01</span>
-                                    <span>02</span>
-                                    <span>03</span>
-                                </div>
-
-                                <div class="second">
-                                    <span>04</span>
-                                    <span>05</span>
-                                    <span class="event">06</span>
-                                    <span>07</span>
-                                    <span>08</span>
-                                    <span>09</span>
-                                    <span>10</span>
-                                </div>
-
-                                <div class="third">
-                                    <span>11</span>
-                                    <span>12</span>
-                                    <span>13</span>
-                                    <span>14</span>
-                                    <span class="active">15</span>
-                                    <span>16</span>
-                                    <span>17</span>
-                                </div>
-
-                                <div class="fourth">
-                                    <span>18</span>
-                                    <span>19</span>
-                                    <span>20</span>
-                                    <span>21</span>
-                                    <span>22</span>
-                                    <span>23</span>
-                                    <span>24</span>
-                                </div>
-
-                                <div class="fifth">
-                                    <span>25</span>
-                                    <span>26</span>
-                                    <span>27</span>
-                                    <span>28</span>
-                                    <span>29</span>
-                                    <span>30</span>
-                                    <span>31</span>
-                                </div>
-                            </div>
-                        </div>
-                        </div>
+                         <div id="calendar"></div>
                     </div>
-                    </div>
-            </div>
+                </div>
+            </section>
         </div>
-    
-    </section>
+    </div>
 </main>
