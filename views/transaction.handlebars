@@ -23,27 +23,30 @@
             </div>
             <hr />
             <div class="my-2 my-lg-0">
-                <a href="/"><button class="button header-btn" >Log Out</button></a>
+                <a href="/"><button class="button header-btn">Log Out</button></a>
             </div>
         </div>
     </nav>
 <main class="container">
-    <p id="userName">Welcome {{userTransactions.first_name}} {{userTransactions.last_name}}</p>
+    <p id="userName">Welcome, {{userTransactions.first_name}} {{userTransactions.last_name}}</p>
     <p id="userNum">#00000<span id="userid">{{userTransactions.user_id}}</span></p>
 
     <section class="monthlyTotals">
         <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-4 mb-3">
                 <h5>Monthly Budget</h5>
-                    <hr><span class="dollarSign">$ </span><span id="monthlyBudget">{{userTransactions.budget}}</span>
+                <hr class="my-0">
+                <span class="dollarSign">$ </span><span id="monthlyBudget">{{userTransactions.budget}}</span>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 mb-3">
                 <h5>Amount Spent</h5>
-                <hr><span class="dollarSign">$ </span><span id="amountSpent"></span>
+                <hr class="my-0">
+                <span class="dollarSign">$ </span><span id="amountSpent"></span>
             </div>
             <div class="col-md-4">
                 <h5>Remaining Balance</h5>
-                    <hr><span class="dollarSignBalance">$ </span><span id="remainingBalance"></span>
+                <hr class="my-0">
+                <span class="dollarSignBalance">$ </span><span id="remainingBalance"></span>
             </div>
         </div>
     </section>
@@ -80,27 +83,27 @@
                     <hr>
                     <table>
                         <tr>
-                            <th>Date</th>
+                            <th class="d-none d-sm-inline">Date</th>
                             <th>Category</th>
                             <th>Source</th>
                             <th>Amount</th>
-                            <th></th>
+                            <th class="d-none d-sm-inline"></th>
                         </tr>
                         {{#each userTransactions.transactions}}
                         <tr class="transactionRow">
-                            <td>{{date}}</td>
+                            <td class="d-none d-sm-inline">{{date}}</td>
                             <td class="tCategory">{{category}}</td>
                             <td>{{source}}</td>
                             <td class="amountDisplay">{{amount}}</td>
-                            <td> <i class="fas fa-trash-alt deleteTransaction" tid="{{tid}}"></i></td>
+                            <td> <i class="fas fa-trash-alt deleteTransaction d-none d-sm-inline" tid="{{tid}}"></i></td>
                         </tr>
                         {{/each}}
                     </table>
                 </div>
             </div>
             <div class="col-lg-4">
-                <div class="col-md-12 ml-auto transactionChart">
-                    <h4>My Transactions</h4>
+                <div class="col-md-12 transactionChart">
+                    <h4 class="text-center">My Transactions</h4>
                     <div id="donutchart">
                     </div>
                 </div>
