@@ -33,22 +33,25 @@
 {{!-- Main  --}}
 <main class="container">
     {{!-- Welcome --}}
-    <p id="userName">Welcome {{userBills.first_name}} {{userBills.last_name}}</p>
+    <p id="userName">Welcome, {{userBills.first_name}} {{userBills.last_name}}</p>
     <p id="userNum">#00000<span id="userid">{{userBills.user_id}}</span></p>
     {{!-- Money Totals --}}
     <section class="monthlyTotals">
         <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-4 mb-3">
                 <h5>Monthly Budget</h5>
-                    <hr><span class="dollarSign">$ </span><span id="monthlyBudget">{{userBills.budget}}</span>
+                <hr class="my-0">
+                <span class="dollarSign">$ </span><span id="monthlyBudget">{{userBills.budget}}</span>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 mb-3">
                 <h5>Bills Amount </h5>
-                <hr><span class="dollarSign">$ </span><span id="amountSpent"></span>
+                <hr class="my-0">
+                <span class="dollarSign">$ </span><span id="amountSpent"></span>
             </div>
             <div class="col-md-4">
                 <h5>Remaining Balance</h5>
-                    <hr><span class="dollarSign" style="color: #38A99E;">$ </span><span id="remainingBalance"></span>
+                <hr class="my-0">
+                <span class="dollarSign" style="color: #38A99E;">$ </span><span id="remainingBalance"></span>
             </div>
         </div>
     </section>
