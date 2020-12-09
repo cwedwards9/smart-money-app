@@ -275,6 +275,10 @@ margin: 5px;
 outline: none;
 }
 
+select {
+  width: 180px;
+}
+
 button{
 color: white;
 background-color: #163D5B;
@@ -534,6 +538,13 @@ a.scroll-top {
 .cld-main{
   width: 330px;
 }
+
+@media only screen and (max-width: 400px) {
+  .cld-main {
+    width: 250px !important;
+  }
+}
+
 .cld-main a{
   color: #38A99E;
   font-weight: bold;
