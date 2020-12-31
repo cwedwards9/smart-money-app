@@ -447,10 +447,13 @@
                 <a class="close">&times;</a>
                 <form id="createUser">
                     <h2>Sign Up</h2>
+                    <input id="emailInput" type="email" required="required" placeholder="Email">
+                    <input id="passwordInput" type="password" required="required" placeholder="Password">
+                    <hr>
                     <input id="firstNameInput" type="text" required="required" placeholder="First Name">
                     <input id="lastNameInput" type="text" required="required" placeholder="Last Name">
                     <input id="monthlyBudget" type="number" required="required" placeholder="Monthly Budget">
-                    <button id="submit" type="submit" value="Submit">Sign Up</button>
+                    <button type="submit" value="Submit">Sign Up</button>
                 </form>
             </div>
         </div>
@@ -464,11 +467,11 @@
         <div class="modal-content">
             <div class="signup-form">
                 <a class="close">&times;</a>
-                <form>
-                    <h2>Select your name</h2>
-                    <ul id="user-login" class="list-group list-group-flush">
-                        <!-- Users -->
-                    </ul>
+                <form id="userLogin">
+                    <h2>Log In</h2>
+                    <input id="emailLogin" type="email" required="required" placeholder="Email">
+                    <input id="passwordLogin" type="password" required="required" placeholder="Password">
+                    <button type="submit" value="Submit">Sign Up</button>
                 </form>
             </div>
         </div>
