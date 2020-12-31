@@ -1,5 +1,7 @@
 let db = require("../models");
 let path = require("path");
+let passport = require("../config/passport");
+let isAuthenticated = require("../config/middleware/isAuthenticated"); 
 
 module.exports = function(app) {
     // GET the Home page
@@ -8,11 +10,10 @@ module.exports = function(app) {
     });
 
 
-    // GET all users for login
-    app.get("/login", (req, res) => {
-        db.User.findAll({}).then(data =>{
-            res.json(data);
-          });
+    // GET route for logging a user in if they have valid login credentials (using passport.authenticate middleware)
+    app.post("/login", passport.authenticate("local"), (req, res) => {
+        // Respond to ajax request with user id in order to redirect to their landing page
+        res.json(req.user);
     });
 
 
@@ -24,23 +25,8 @@ module.exports = function(app) {
     });
 
 
-    // PUT route for updating a budget for a user
-    app.put("/budget", (req, res) => {
-        db.User.update(
-            req.body,
-            {
-                where: {
-                    id: req.body.id
-                }
-            }
-        ).then(data => {
-            res.json(data);
-        });
-    });
-
-
     //  GET route for landing page
-    app.get("/user/:id", (req, res) => {
+    app.get("/user/:id", isAuthenticated, (req, res) => {
         db.User.findOne({
             where: {
                 id: req.params.id
@@ -59,6 +45,21 @@ module.exports = function(app) {
             }
         }).then(user => {
             res.render("loans", {user: user})
+        });
+    });
+
+
+    // PUT route for updating a budget for a user
+    app.put("/budget", (req, res) => {
+        db.User.update(
+            req.body,
+            {
+                where: {
+                    id: req.body.id
+                }
+            }
+        ).then(data => {
+            res.json(data);
         });
     });
 
