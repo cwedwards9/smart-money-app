@@ -61,9 +61,3 @@ window.onclick = function (event) {
         event.target.style.display = "none";
     }
 }
-
-$(document).ready(function(){
-  $("form").submit(function(){
-    alert("Thank you for signing up. Please log in.");
-  });
-});
