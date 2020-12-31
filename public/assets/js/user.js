@@ -2,16 +2,20 @@ $("#createUser").on("submit", (e) => {
     e.preventDefault();
 
     // Select values from the form
-    let firstName = $("#firstNameInput").val().trim();
-    let lastName = $("#lastNameInput").val().trim();
-    let monthlyBudget = $("#monthlyBudget").val().trim();
+    let email = $("#emailInput");
+    let password = $("#passwordInput");
+    let firstName = $("#firstNameInput");
+    let lastName = $("#lastNameInput");
+    let monthlyBudget = $("#monthlyBudget");
     
     // Create the new user object
     let newUser = {
-        f_name: firstName,
-        l_name: lastName,
-        budget: monthlyBudget
-    }
+        email: email.val().trim(),
+        password: password.val().trim(),
+        f_name: firstName.val().trim(),
+        l_name: lastName.val().trim(),
+        budget: monthlyBudget.val().trim()
+    };
 
     // Post user data to the /register route
     $.ajax("/register", {
@@ -26,19 +30,26 @@ $("#createUser").on("submit", (e) => {
 
 
 // GET request to get all users from the database
-$("#loginBtn").on("click", () => {
-    $.get("/login")
-    .done(data => {
-        // Remove list of users before repopulating them in the list
-        $("#user-login").empty();
-        // Loop through each user in the database and get the id, first and last name
-        for(let i = 0; i < data.length; i++){
-            let id = data[i].id;
-            let name = data[i].f_name + " " + data[i].l_name;
-            
-            // Create a list item with the user's name and a link to their transactions page
-            let user = $("<li><a href='/user/"+ id + "'>" + name + "</a></li>");
-            $("#user-login").append(user);
-        }
+$("#userLogin").on("submit", (e) => {
+    e.preventDefault();
+
+    // Select the inputs
+    let email = $("#emailLogin");
+    let password = $("#passwordLogin");
+
+    // Create a user object
+    let userData = {
+        email: email.val().trim(),
+        password: password.val().trim()
+    };
+
+    // Post user data to the /login route
+    $.ajax("/login", {
+        type: "POST",
+        data: userData
+    }).then(data => {
+        // Once the user is logged in, the page will reload
+        console.log(data.id);
+        location.replace(`/user/${data.id}`);
     });
 });
