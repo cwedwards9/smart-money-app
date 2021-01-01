@@ -1,9 +1,10 @@
 let db = require("../models");
+let isAuthenticated = require("../config/middleware/isAuthenticated");
 
 
 module.exports = function(app){
     // Get bills for specific user
-    app.get("/user/bills/:id", (req, res) => {
+    app.get("/user/bills/:id", isAuthenticated, (req, res) => {
         db.User.findOne({
             where: {
                 id: req.params.id
@@ -35,7 +36,7 @@ module.exports = function(app){
 
     
     // POST new bill
-    app.post("/bill", (req, res) => {
+    app.post("/bill", isAuthenticated, (req, res) => {
         db.Bill.create(req.body).then(data => {
             res.json(data);
         });
@@ -43,7 +44,7 @@ module.exports = function(app){
 
 
     // DELETE a bill
-    app.delete("/bill/:id", (req, res) => {
+    app.delete("/bill/:id", isAuthenticated, (req, res) => {
         db.Bill.destroy({
             where: {
                 id: req.params.id

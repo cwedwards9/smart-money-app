@@ -1,9 +1,10 @@
 let db = require("../models");
+let isAuthenticated = require("../config/middleware/isAuthenticated");
 
 
 module.exports = function(app){
     // GET transactions for specific user
-    app.get("/user/transactions/:id", (req, res) => {
+    app.get("/user/transactions/:id", isAuthenticated, (req, res) => {
         db.User.findOne({
             where: {
                 id: req.params.id
@@ -36,14 +37,14 @@ module.exports = function(app){
 
     
     // POST new transaction
-    app.post("/transaction", (req, res) => {
+    app.post("/transaction", isAuthenticated, (req, res) => {
         db.Transaction.create(req.body).then(data => {
             res.json(data);
         });
     });
 
     // DELETE a transaction
-    app.delete("/transaction/:id", (req, res) => {
+    app.delete("/transaction/:id", isAuthenticated, (req, res) => {
         db.Transaction.destroy({
             where: {
                 id: req.params.id
