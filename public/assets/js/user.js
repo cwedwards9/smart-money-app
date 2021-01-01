@@ -21,11 +21,12 @@ $("#createUser").on("submit", (e) => {
     $.ajax("/register", {
         type: "POST",
         data: newUser
-    }).then(() => {
-        // Once the user is registered, the page will reload
-        window.location.reload();
+    }).then(data => {
+        // If the user successfully signs up, redirect them to the user landing page using their id
+        location.href = `/user/${data}`;
+    }).catch(err => {
+        console.log(err);
     });
-
 });
 
 
@@ -48,8 +49,10 @@ $("#userLogin").on("submit", (e) => {
         type: "POST",
         data: userData
     }).then(data => {
-        // Once the user is logged in, the page will reload
-        console.log(data.id);
-        location.replace(`/user/${data.id}`);
+        // If the user successfully logs in, redirect them to the user landing page using their id
+        location.href = `/user/${data.id}`;
+    }).catch(err => {
+        // If there is an error, log the error
+        console.log(err);
     });
 });
