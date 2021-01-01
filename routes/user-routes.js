@@ -26,6 +26,13 @@ module.exports = function(app) {
     });
 
 
+    // GET route for loggin a user out
+    app.get("/logout", (req, res) => {
+        req.logout();
+        res.redirect("/");
+    });
+
+
     //  GET route for landing page
     app.get("/user/:id", isAuthenticated, (req, res) => {
         db.User.findOne({
@@ -39,7 +46,7 @@ module.exports = function(app) {
 
 
     // GET route for loans page
-    app.get("/user/loans/:id", (req, res) => {
+    app.get("/user/loans/:id", isAuthenticated, (req, res) => {
         db.User.findOne({
             where:{
                 id: req.params.id
@@ -51,7 +58,7 @@ module.exports = function(app) {
 
 
     // PUT route for updating a budget for a user
-    app.put("/budget", (req, res) => {
+    app.put("/budget", isAuthenticated, (req, res) => {
         db.User.update(
             req.body,
             {
