@@ -20,7 +20,8 @@ module.exports = function(app) {
     // POST route for registering new user
     app.post("/register", (req, res) => {
         db.User.create(req.body).then(data => {
-            res.json(data);
+            // Respond with the user id in order to redirect to their landing page
+            res.json(data.dataValues.id);
         });
     });
 
