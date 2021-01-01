@@ -2,6 +2,7 @@ let db = require("../models");
 let path = require("path");
 let passport = require("../config/passport");
 let isAuthenticated = require("../config/middleware/isAuthenticated"); 
+const { nextTick } = require("process");
 
 module.exports = function(app) {
     // GET the Home page
@@ -19,9 +20,12 @@ module.exports = function(app) {
 
     // POST route for registering new user
     app.post("/register", (req, res) => {
-        db.User.create(req.body).then(data => {
+        db.User.create(req.body).then(registeredUser => {
             // Respond with the user id in order to redirect to their landing page
-            res.json(data.dataValues.id);
+            req.login(registeredUser, err => {
+                if(err) return next(err);
+                res.redirect(`/user/${registeredUser.dataValues.id}`);
+            });
         });
     });
 
