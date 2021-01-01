@@ -1,33 +1,33 @@
-$("#createUser").on("submit", (e) => {
-    e.preventDefault();
+// $("#createUser").on("submit", (e) => {
+//     e.preventDefault();
 
-    // Select values from the form
-    let email = $("#emailInput");
-    let password = $("#passwordInput");
-    let firstName = $("#firstNameInput");
-    let lastName = $("#lastNameInput");
-    let monthlyBudget = $("#monthlyBudget");
+//     // Select values from the form
+//     let email = $("#emailInput");
+//     let password = $("#passwordInput");
+//     let firstName = $("#firstNameInput");
+//     let lastName = $("#lastNameInput");
+//     let monthlyBudget = $("#monthlyBudget");
     
-    // Create the new user object
-    let newUser = {
-        email: email.val().trim(),
-        password: password.val().trim(),
-        f_name: firstName.val().trim(),
-        l_name: lastName.val().trim(),
-        budget: monthlyBudget.val().trim()
-    };
+//     // Create the new user object
+//     let newUser = {
+//         email: email.val().trim(),
+//         password: password.val().trim(),
+//         f_name: firstName.val().trim(),
+//         l_name: lastName.val().trim(),
+//         budget: monthlyBudget.val().trim()
+//     };
 
-    // Post user data to the /register route
-    $.ajax("/register", {
-        type: "POST",
-        data: newUser
-    }).then(data => {
-        // If the user successfully signs up, redirect them to the user landing page using their id
-        location.href = `/user/${data}`;
-    }).catch(err => {
-        console.log(err);
-    });
-});
+//     // Post user data to the /register route
+//     $.ajax("/register", {
+//         type: "POST",
+//         data: newUser
+//     }).then(data => {
+//         // If the user successfully signs up, redirect them to the user landing page using their id
+//         location.href = `/user/${data}`;
+//     }).catch(err => {
+//         console.log(err);
+//     });
+// });
 
 
 // GET request to get all users from the database
