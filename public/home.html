@@ -445,14 +445,14 @@
         <div class="modal-content">
             <div class="signup-form">
                 <a class="close">&times;</a>
-                <form id="createUser">
+                <form id="createUser" action="/register" method="POST">
                     <h2>Sign Up</h2>
-                    <input id="emailInput" type="email" required="required" placeholder="Email">
-                    <input id="passwordInput" type="password" required="required" placeholder="Password">
+                    <input id="emailInput" name="email" type="email" placeholder="Email" required>
+                    <input id="passwordInput" name="password" type="password" placeholder="Password" required>
                     <hr>
-                    <input id="firstNameInput" type="text" required="required" placeholder="First Name">
-                    <input id="lastNameInput" type="text" required="required" placeholder="Last Name">
-                    <input id="monthlyBudget" type="number" required="required" placeholder="Monthly Budget">
+                    <input id="firstNameInput" name="f_name" type="text" placeholder="First Name" required>
+                    <input id="lastNameInput" name="l_name" type="text" placeholder="Last Name" required>
+                    <input id="monthlyBudget" name="budget" type="number" placeholder="Monthly Budget" required>
                     <button type="submit" value="Submit">Sign Up</button>
                 </form>
             </div>
@@ -469,8 +469,8 @@
                 <a class="close">&times;</a>
                 <form id="userLogin">
                     <h2>Log In</h2>
-                    <input id="emailLogin" type="email" required="required" placeholder="Email">
-                    <input id="passwordLogin" type="password" required="required" placeholder="Password">
+                    <input id="emailLogin" type="email" placeholder="Email" required>
+                    <input id="passwordLogin" type="password" placeholder="Password" required>
                     <button type="submit" value="Submit">Sign Up</button>
                 </form>
             </div>
