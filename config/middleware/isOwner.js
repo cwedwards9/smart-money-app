@@ -4,7 +4,7 @@ const db = require("../../models");
 module.exports = function(req, res, next) {
     db.findOne({
         where: {
-            id: req.body.id
+            id: req.params.id
         }
     }).then(user => {
         // If the user is not the owner, redirect them
