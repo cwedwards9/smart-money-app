@@ -1,8 +1,9 @@
-let db = require("../models");
-let path = require("path");
-let passport = require("../config/passport");
-let isAuthenticated = require("../config/middleware/isAuthenticated"); 
-const { nextTick } = require("process");
+const db = require("../models");
+const path = require("path");
+const passport = require("../config/passport");
+const isLoggedIn = require("../config/middleware/isLoggedIn");
+const isOwner = require("../config/middleware/isOwner");
+
 
 module.exports = function(app) {
     // GET the Home page
@@ -38,7 +39,7 @@ module.exports = function(app) {
 
 
     //  GET route for landing page
-    app.get("/user/:id", isAuthenticated, (req, res) => {
+    app.get("/user/:id", isLoggedIn, (req, res) => {
         db.User.findOne({
             where: {
                 id: req.params.id
@@ -50,7 +51,7 @@ module.exports = function(app) {
 
 
     // GET route for loans page
-    app.get("/user/loans/:id", isAuthenticated, (req, res) => {
+    app.get("/user/loans/:id", isLoggedIn, (req, res) => {
         db.User.findOne({
             where:{
                 id: req.params.id
@@ -62,7 +63,7 @@ module.exports = function(app) {
 
 
     // PUT route for updating a budget for a user
-    app.put("/budget", isAuthenticated, (req, res) => {
+    app.put("/budget", isLoggedIn, (req, res) => {
         db.User.update(
             req.body,
             {
