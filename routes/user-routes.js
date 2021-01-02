@@ -39,7 +39,7 @@ module.exports = function(app) {
 
 
     //  GET route for landing page
-    app.get("/user/:id", isLoggedIn, (req, res) => {
+    app.get("/user/:id", isLoggedIn, isOwner, (req, res) => {
         db.User.findOne({
             where: {
                 id: req.params.id
@@ -51,7 +51,7 @@ module.exports = function(app) {
 
 
     // GET route for loans page
-    app.get("/user/loans/:id", isLoggedIn, (req, res) => {
+    app.get("/user/loans/:id", isLoggedIn, isOwner, (req, res) => {
         db.User.findOne({
             where:{
                 id: req.params.id
@@ -63,7 +63,7 @@ module.exports = function(app) {
 
 
     // PUT route for updating a budget for a user
-    app.put("/budget/:id", isLoggedIn, (req, res) => {
+    app.put("/budget/:id", isLoggedIn, isOwner, (req, res) => {
         db.User.update(
             req.body,
             {

@@ -1,10 +1,10 @@
 const db = require("../models");
 const isLoggedIn = require("../config/middleware/isLoggedIn");
-
+const isOwner = require("../config/middleware/isOwner");
 
 module.exports = function(app){
     // Get bills for specific user
-    app.get("/user/bills/:id", isLoggedIn, (req, res) => {
+    app.get("/user/bills/:id", isLoggedIn, isOwner, (req, res) => {
         db.User.findOne({
             where: {
                 id: req.params.id
@@ -36,7 +36,7 @@ module.exports = function(app){
 
     
     // POST new bill
-    app.post("/bill/:id", isLoggedIn, (req, res) => {
+    app.post("/bill/:id", isLoggedIn, isOwner, (req, res) => {
         db.Bill.create(req.body).then(data => {
             res.json(data);
         });
@@ -44,7 +44,7 @@ module.exports = function(app){
 
 
     // DELETE a bill
-    app.delete("/bill/:id", isLoggedIn, (req, res) => {
+    app.delete("/bill/:id", isLoggedIn, isOwner, (req, res) => {
         db.Bill.destroy({
             where: {
                 id: req.params.id

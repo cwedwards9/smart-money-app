@@ -1,10 +1,10 @@
 const db = require("../models");
 const isLoggedIn = require("../config/middleware/isLoggedIn");
-
+const isOwner = require("../config/middleware/isOwner");
 
 module.exports = function(app){
     // GET transactions for specific user
-    app.get("/user/transactions/:id", isLoggedIn, (req, res) => {
+    app.get("/user/transactions/:id", isLoggedIn, isOwner, (req, res) => {
         db.User.findOne({
             where: {
                 id: req.params.id
@@ -37,14 +37,14 @@ module.exports = function(app){
 
     
     // POST new transaction
-    app.post("/transaction/:id", isLoggedIn, (req, res) => {
+    app.post("/transaction/:id", isLoggedIn, isOwner, (req, res) => {
         db.Transaction.create(req.body).then(data => {
             res.json(data);
         });
     });
 
     // DELETE a transaction
-    app.delete("/transaction/:id", isLoggedIn, (req, res) => {
+    app.delete("/transaction/:id", isLoggedIn, isOwner, (req, res) => {
         db.Transaction.destroy({
             where: {
                 id: req.params.id
