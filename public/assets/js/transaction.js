@@ -2,6 +2,8 @@
 $("#createTransaction").on("submit", e => {
     e.preventDefault();
 
+    let uid = $("#userid").html();
+
     let newTransaction = {
         category: $("#tCategory").val().trim(),
         amount: $("#tAmount").val().trim(),
@@ -11,7 +13,7 @@ $("#createTransaction").on("submit", e => {
     };
 
     // Send transaction as POST request
-    $.ajax("/transaction", {
+    $.ajax(`/transaction/${uid}`, {
         method: "POST",
         data: newTransaction
     }).then(() => {

@@ -37,7 +37,7 @@ module.exports = function(app){
 
     
     // POST new transaction
-    app.post("/transaction", isLoggedIn, (req, res) => {
+    app.post("/transaction/:id", isLoggedIn, (req, res) => {
         db.Transaction.create(req.body).then(data => {
             res.json(data);
         });
