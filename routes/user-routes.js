@@ -63,12 +63,12 @@ module.exports = function(app) {
 
 
     // PUT route for updating a budget for a user
-    app.put("/budget", isLoggedIn, (req, res) => {
+    app.put("/budget/:id", isLoggedIn, (req, res) => {
         db.User.update(
             req.body,
             {
                 where: {
-                    id: req.body.id
+                    id: req.params.id
                 }
             }
         ).then(data => {
