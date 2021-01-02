@@ -2,7 +2,7 @@ const db = require("../../models");
 
 // Middleware for restricting routes if a user is not the author/owner of the page
 module.exports = function(req, res, next) {
-    db.findOne({
+    db.User.findOne({
         where: {
             id: req.params.id
         }
