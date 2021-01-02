@@ -2,13 +2,14 @@
 $("#editBudget").on("submit", (e) => {
     e.preventDefault();
 
+    let id = $("#userid").html().trim();
+
     let updatedBudget = {
         budget: $("#updatedBudgetInput").val().trim(),
-        id: $("#userid").html().trim()
     }
 
     // Send updated budget as PUT request
-    $.ajax("/budget", {
+    $.ajax(`/budget/${id}`, {
         method: "PUT",
         data: updatedBudget
     }).then(() => {
