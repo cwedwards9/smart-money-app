@@ -36,7 +36,7 @@ module.exports = function(app){
 
     
     // POST new bill
-    app.post("/bill", isLoggedIn, (req, res) => {
+    app.post("/bill/:id", isLoggedIn, (req, res) => {
         db.Bill.create(req.body).then(data => {
             res.json(data);
         });

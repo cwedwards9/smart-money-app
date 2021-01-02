@@ -2,6 +2,8 @@
 $("#createBill").on("submit", e => {
     e.preventDefault();
 
+    let id = $("#userid").html();
+
     let newBill = {
         name: $("#bName").val().trim(),
         amount: $("#bAmount").val().trim(),
@@ -10,7 +12,7 @@ $("#createBill").on("submit", e => {
     };
 
     
-    $.ajax("/bill", {
+    $.ajax(`/bill/${id}`, {
         type: "POST",
         data: newBill
     }).then(() => {
