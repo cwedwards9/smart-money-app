@@ -17,13 +17,18 @@ Uers are NOT required to enter any personal or banking information. This app is 
 
 ## Technologies
 * Node.js
-* Packages
-    * Express
-    * MySQL
-    * Sequelize
-    * Express-Handlebars
+* Express
+* MySQL
+* Sequelize
+* Express-Handlebars
+* Authentication/Authorization:
+    * bcrypt
+    * Express-session
+    * Passport
+    * Passport-local
      
 * Google Charts
+
 
 ## Contributing
 Feel free to submit pull requests.
