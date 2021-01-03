@@ -47,7 +47,7 @@ module.exports = function(app){
     app.delete("/transaction/:id", isLoggedIn, isOwner, (req, res) => {
         db.Transaction.destroy({
             where: {
-                id: req.params.id
+                id: req.body.id
             }
         }).then((transaction) => {
             res.json(transaction);
