@@ -13,7 +13,7 @@ $("#createBill").on("submit", e => {
 
     
     $.ajax(`/bill/${id}`, {
-        type: "POST",
+        method: "POST",
         data: newBill
     }).then(() => {
         location.reload();
@@ -22,11 +22,15 @@ $("#createBill").on("submit", e => {
 
 // When a user clicks the delete button, the corresponding bill will be deleted
 $(".deleteBill").on("click", function() {
-    let bid = $(this).attr("bid");
+    let id = $("#userid").html();
+
+    let bill = {
+      id: $(this).attr("bid")
+    };
     
-    $.ajax({
-        url: `/bill/${bid}`,
-        method: "DELETE"
+    $.ajax(`/bill/${id}`, {
+        method: "DELETE",
+        data: bill
     }).then(() => {
         location.reload();
     });
