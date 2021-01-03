@@ -1,20 +1,21 @@
-var approxPayment = document.getElementById("approxPay").style.visibility="hidden";
+document.getElementById("approxPay").style.visibility="hidden";
 
 
 function calculate() {
 
-  var amount = document.getElementById("amount");
-  var apr = document.getElementById("apr");
-  var years = document.getElementById("years");
-  var payment = document.getElementById("payment");
-  var total = document.getElementById("total"); 
-  var totalinterest = document.getElementById("totalinterest");
-  var principal = parseFloat(amount.value);
-  var interest = parseFloat(apr.value) / 100 / 12;
-  var payments = parseFloat(years.value) * 12;
-  var x = Math.pow(1 + interest, payments);
-  var monthly = (principal * x * interest) / (x - 1);
-  var approxPayment = document.getElementById("approxPay").style.visibility="visible";
+  let amount = document.getElementById("amount");
+  let apr = document.getElementById("apr");
+  let years = document.getElementById("years");
+  let payment = document.getElementById("payment");
+  let total = document.getElementById("total"); 
+  let totalinterest = document.getElementById("totalinterest");
+  let principal = parseFloat(amount.value);
+  let interest = parseFloat(apr.value) / 100 / 12;
+  let payments = parseFloat(years.value) * 12;
+  let x = Math.pow(1 + interest, payments);
+  let monthly = (principal * x * interest) / (x - 1);
+ 
+  document.getElementById("approxPay").style.visibility="visible";
 
 
   if (isFinite(monthly)) {
