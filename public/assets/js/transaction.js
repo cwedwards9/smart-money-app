@@ -24,11 +24,15 @@ $("#createTransaction").on("submit", e => {
 
 // When a user clicks the delete button, the corresponding transaction will be deleted
 $(".deleteTransaction").on("click", function() {
-    let tid = $(this).attr("tid");
+    let uid = $("#userid").html();
+
+    let transaction = {
+        id: $(this).attr("tid")
+    };
     
-    $.ajax({
-        url: `/transaction/${tid}`,
-        method: "DELETE"
+    $.ajax(`/transaction/${uid}`, {
+        method: "DELETE",
+        data: transaction
     }).then(() => {
         location.reload();
     });
