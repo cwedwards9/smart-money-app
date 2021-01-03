@@ -47,7 +47,7 @@ module.exports = function(app){
     app.delete("/bill/:id", isLoggedIn, isOwner, (req, res) => {
         db.Bill.destroy({
             where: {
-                id: req.params.id
+                id: req.body.id
             }
         }).then((bill) => {
             res.json(bill);
