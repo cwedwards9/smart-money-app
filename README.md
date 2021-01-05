@@ -2,9 +2,8 @@
 [![License](https://img.shields.io/badge/license-The%20MIT%20License-success.svg)](https://shields.io/)
 
 ## Usage
-For login test credentials, email me @ [chase.w.edwards9@gmail.com](chase.w.edwards9@gmail.com)     
-or     
-check my resume for credentials
+* Users can register and login under their email and password
+* For login test credentials, email me @ <chase.w.edwards9@gmail.com> or check my resume
 
 ## Description
 A full-stack app used for tracking monthly transactions and bills to pay.
