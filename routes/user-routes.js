@@ -25,6 +25,7 @@ module.exports = function(app) {
             // Respond with the user id in order to redirect to their landing page
             req.login(registeredUser, err => {
                 if(err) return next(err);
+                req.flash("success", "Successfully registered!");
                 res.redirect(`/user/${registeredUser.dataValues.id}`);
             });
         });
