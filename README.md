@@ -1,6 +1,10 @@
 # Budget Tracker
 [![License](https://img.shields.io/badge/license-The%20MIT%20License-success.svg)](https://shields.io/)
 
+## Usage
+For login test credentials, email me @ [chase.w.edwards9@gmail.com](chase.w.edwards9@gmail.com)     
+or     
+check my resume for credentials
 
 ## Description
 A full-stack app used for tracking monthly transactions and bills to pay.
