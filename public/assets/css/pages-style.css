@@ -2,6 +2,7 @@
 1. Main 
 2. Nav
 3. Money Section Top Bar
+    Register Page
 4. Landing Page
 5. Budget and Transaction Pages
 6. Loans Page
@@ -15,6 +16,12 @@
 
 body {
   background-color: #f7f7f7;
+  margin: 0;
+  padding: 0;
+}
+html {
+  margin: 0;
+  padding: 0;
 }
 
 p {
@@ -86,17 +93,6 @@ select {
 
 /*=====  Main  ======*/
 
-#btnMsgClose {
-  width: 20px;
-  height: 40px;
-  position: relative;
-  top: -8px;
-  color: black;
-  background-color: transparent;
-  padding: 6px;
-  border-radius: 0;
-  border: none;
-}
 
 /*=====  Navbar  ======*/
 
@@ -206,12 +202,54 @@ select {
     font-weight: 100;
     font-family: "Roboto", sans-serif;
   }
-    /*=====  End  Money section - Top  ======*/
+/*=====  End  Money section - Top  ======*/
 
 
+/*===== Register Page =====*/
+form#createUser {
+  width: 40vw;
+  margin: 0 auto;
+  padding: 25px 0;
+}
 
+#createUser h1{
+  text-align: center;
+}
 
-  /*=====  Landing Page  ======*/
+#createUser input {
+  box-sizing: content-box;
+  width: 100%;
+}
+
+#createUser hr {
+  margin: 10px 0;
+}
+
+#monthlyBudget {
+  font-size: 15px;
+}
+
+#createUser div {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+#btnMsgClose {
+  width: 20px;
+  height: 40px;
+  position: relative;
+  top: -8px;
+  color: black;
+  background-color: transparent;
+  padding: 6px;
+  border-radius: 0;
+  border: none;
+}
+
+/* ===== End Langing Page Section ====== */
+
+/*=====  Landing Page  ======*/
   .card {
     background-color: white;
     border-radius: 1em;
