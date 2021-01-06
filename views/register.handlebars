@@ -1,0 +1,19 @@
+ {{> flash}}
+
+<div class="register-form">
+    <form id="createUser" action="/register" method="POST">
+        <h1>Sign Up</h1>
+        <input id="emailInput" name="email" type="email" placeholder="Email" required>
+        <input id="passwordInput" name="password" type="password" placeholder="Password" required>
+        <hr>
+        <input id="firstNameInput" name="f_name" type="text" placeholder="First Name" required>
+        <input id="lastNameInput" name="l_name" type="text" placeholder="Last Name" required>
+        <input id="monthlyBudget" name="budget" type="number" placeholder="Monthly Budget" required>
+        <div>
+            <button type="submit" value="Submit">Sign Up</button>
+        </div>
+    </form>
+</div>
+
+{{!-- For Bootstrap --}}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
