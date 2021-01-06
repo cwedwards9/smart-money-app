@@ -19,6 +19,11 @@ module.exports = function(app) {
         res.json(req.user);
     });
 
+    // GET route for the register page
+    app.get("/register", (req, res) => {
+        res.render("register");
+    });
+
 
     // POST route for registering new user
     app.post("/register", (req, res) => {
@@ -30,7 +35,8 @@ module.exports = function(app) {
                 res.redirect(`/user/${registeredUser.dataValues.id}`);
             });
         }).catch(() => {
-            res.redirect("/");
+            req.flash("error", "An account with that email already exists!");
+            res.redirect("/register");
         });
     });
 
