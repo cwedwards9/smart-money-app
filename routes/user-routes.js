@@ -29,6 +29,8 @@ module.exports = function(app) {
                 req.flash("success", "Successfully registered!");
                 res.redirect(`/user/${registeredUser.dataValues.id}`);
             });
+        }).catch(() => {
+            res.redirect("/");
         });
     });
 
