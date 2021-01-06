@@ -15,6 +15,7 @@ module.exports = function(app) {
     // GET route for logging a user in if they have valid login credentials (using passport.authenticate middleware)
     app.post("/login", passport.authenticate("local"), (req, res) => {
         // Respond to ajax request with user id in order to redirect to their landing page
+        req.flash("success", "Welcome back!");
         res.json(req.user);
     });
 
