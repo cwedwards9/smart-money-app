@@ -2,14 +2,15 @@
 1. Main 
 2. Nav
 3. Money Section Top Bar
-    Register Page
-4. Landing Page
-5. Budget and Transaction Pages
-6. Loans Page
-7. Loans Logos - Bottom
-8. Footer
-9. Scroll button
-10. Error page
+4. Register Page
+5. Flash Messages
+6. Landing Page
+7. Budget and Transaction Pages
+8. Loans Page
+9. Loans Logos - Bottom
+10. Footer
+11. Scroll button
+12. Error page
 
 
 /*=====  Main  ======*/
@@ -206,10 +207,24 @@ select {
 
 
 /*===== Register Page =====*/
+#registerContainer {
+  padding: 75px;
+}
+
+/* #registerContainer a {
+  padding: 5px 10px;
+  background-color: #163D5B;
+  color: white;
+  border-radius: 2em;
+} */
+
 form#createUser {
   width: 40vw;
   margin: 0 auto;
-  padding: 25px 0;
+  padding: 25px 20px;
+  border-radius: 5px;
+  background-color: white;
+  box-shadow: 0 19px 35px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.1);
 }
 
 #createUser h1{
@@ -217,16 +232,13 @@ form#createUser {
 }
 
 #createUser input {
-  box-sizing: content-box;
+  margin: 10px 0;
+  box-sizing: border-box;
   width: 100%;
 }
 
 #createUser hr {
-  margin: 10px 0;
-}
-
-#monthlyBudget {
-  font-size: 15px;
+  margin: 20px 0;
 }
 
 #createUser div {
@@ -234,6 +246,21 @@ form#createUser {
   display: flex;
   justify-content: center;
 }
+
+#createUser div button {
+  padding: 5px 15px;
+  background-color: #E55139;
+}
+
+/* ===== End Register Page ====== */
+
+
+/* ===== Flash Messages ===== */
+div.alert-dismissible {
+  width: 95%;
+  margin: 0 auto;
+}
+
 
 #btnMsgClose {
   width: 20px;
@@ -246,8 +273,8 @@ form#createUser {
   border-radius: 0;
   border: none;
 }
+/* ===== End Flash Messages ====== */
 
-/* ===== End Langing Page Section ====== */
 
 /*=====  Landing Page  ======*/
   .card {
