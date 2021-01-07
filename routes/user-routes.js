@@ -12,6 +12,11 @@ module.exports = function(app) {
     });
 
 
+    // GET route for the login page
+    app.get("/login", (req, res) => {
+        res.render("login");
+    });
+
     // GET route for logging a user in if they have valid login credentials (using passport.authenticate middleware)
     app.post("/login", passport.authenticate("local"), (req, res) => {
         // Respond to ajax request with user id in order to redirect to their landing page
@@ -19,11 +24,11 @@ module.exports = function(app) {
         res.json(req.user);
     });
 
+
     // GET route for the register page
     app.get("/register", (req, res) => {
         res.render("register");
     });
-
 
     // POST route for registering new user
     app.post("/register", (req, res) => {
