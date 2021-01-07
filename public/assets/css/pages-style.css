@@ -3,14 +3,17 @@
 2. Nav
 3. Money Section Top Bar
 4. Register Page
-5. Flash Messages
-6. Landing Page
-7. Budget and Transaction Pages
-8. Loans Page
-9. Loans Logos - Bottom
-10. Footer
-11. Scroll button
-12. Error page
+5. Login Page
+6. Flash Messages
+7. Landing Page
+8. Budget and Transaction Pages
+9. Loans Page
+10. Loans Logos - Bottom
+11. Footer
+12. Scroll button
+13. Error page
+
+
 
 
 /*=====  Main  ======*/
@@ -208,15 +211,8 @@ select {
 
 /*===== Register Page =====*/
 #registerContainer {
-  padding: 75px;
+  padding: 50px;
 }
-
-/* #registerContainer a {
-  padding: 5px 10px;
-  background-color: #163D5B;
-  color: white;
-  border-radius: 2em;
-} */
 
 form#createUser {
   width: 40vw;
@@ -252,7 +248,52 @@ form#createUser {
   background-color: #E55139;
 }
 
+div#registerContainer .links {
+  margin-top: 25px;
+  text-align: center;
+}
+
 /* ===== End Register Page ====== */
+
+
+/* ===== Login Page ===== */
+#loginContainer {
+  padding: 75px;
+  height: 100vh;
+}
+
+form#userLogin {
+  width: 40vw;
+  margin: 0 auto;
+  padding: 40px 20px;
+  border-radius: 5px;
+  background-color: white;
+  box-shadow: 0 19px 35px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.1);
+}
+
+#userLogin h1 {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+#userLogin input {
+  display: block;
+  margin: 10px 0;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+#userLogin button {
+  width: 100%;
+}
+
+div#loginContainer .links {
+  margin-top: 25px;
+  text-align: center;
+}
+
+/* ===== End Login Page ====== */
+
 
 
 /* ===== Flash Messages ===== */
