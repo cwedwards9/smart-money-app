@@ -211,11 +211,11 @@ select {
 
 /*===== Register Page =====*/
 #registerContainer {
-  padding: 50px;
+  padding: 50px 0;
 }
 
 form#createUser {
-  width: 40vw;
+  width: 35vw;
   margin: 0 auto;
   padding: 25px 20px;
   border-radius: 5px;
@@ -225,10 +225,11 @@ form#createUser {
 
 #createUser h1{
   text-align: center;
+  margin-bottom: 15px;
 }
 
 #createUser input {
-  margin: 10px 0;
+  margin: 5px 0;
   box-sizing: border-box;
   width: 100%;
 }
@@ -245,6 +246,7 @@ form#createUser {
 
 #createUser div button {
   padding: 5px 15px;
+  margin-top: 15px;
   background-color: #E55139;
 }
 
@@ -253,17 +255,23 @@ div#registerContainer .links {
   text-align: center;
 }
 
+@media only screen and (max-width: 750px) {
+  form#createUser {
+    width: 75vw;
+  }
+}
+
 /* ===== End Register Page ====== */
 
 
 /* ===== Login Page ===== */
 #loginContainer {
-  padding: 75px;
+  padding: 75px 0;
   height: 100vh;
 }
 
 form#userLogin {
-  width: 40vw;
+  width: 35vw;
   margin: 0 auto;
   padding: 40px 20px;
   border-radius: 5px;
@@ -273,23 +281,29 @@ form#userLogin {
 
 #userLogin h1 {
   text-align: center;
-  margin-bottom: 25px;
+  margin-bottom: 15px;
 }
 
 #userLogin input {
-  display: block;
-  margin: 10px 0;
+  margin: 5px 0;
   box-sizing: border-box;
   width: 100%;
 }
 
 #userLogin button {
   width: 100%;
+  margin-top: 15px;
 }
 
 div#loginContainer .links {
   margin-top: 25px;
   text-align: center;
+}
+
+@media only screen and (max-width: 750px) {
+  form#userLogin {
+    width: 75vw;
+  }
 }
 
 /* ===== End Login Page ====== */
