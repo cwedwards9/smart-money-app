@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cwedwards9/budget-tracker.git"
+    "url": "git+https://github.com/cwedwards9/smart-money-app.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/cwedwards9/budget-tracker/issues"
+    "url": "https://github.com/cwedwards9/smart-money-app/issues"
   },
-  "homepage": "https://github.com/cwedwards9/budget-tracker#readme",
+  "homepage": "https://github.com/cwedwards9/smart-money-app#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "connect-flash": "^0.1.1",
