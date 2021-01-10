@@ -16,7 +16,7 @@ Smart Money is an online app for those who want to be smarter with their money. 
      
 Uers are NOT required to enter any personal or banking information. This app is intended to safely allow you to track basic information regarding your past and future purchases.
       
-![Smart Money Demo](/public/assets/images/smart-money-demo.gif)
+![Smart Money Demo](/public/assets/images/smart-money-app-demo.gif)
 
 ## Technologies
 * Node.js
