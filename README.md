@@ -8,7 +8,7 @@
 ## Description
 A full-stack app used for tracking monthly transactions and bills to pay.
             
-Click [here](https://smart-money-app.herokuapp.com/) to go to the deployed site for Smart Money!
+Click [here](https://smart-money-prod.up.railway.app/) to go to the deployed site for Smart Money!
       
 ![Smart Money Logo](/public/assets/images/SmartMoneyLogoOne.png)    
 
